@@ -14,18 +14,15 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class MessageType extends $pb.ProtobufEnum {
-  static const MessageType Welcome = MessageType._(0, _omitEnumNames ? '' : 'Welcome');
-  static const MessageType Call = MessageType._(1, _omitEnumNames ? '' : 'Call');
-  static const MessageType CallSuccess = MessageType._(2, _omitEnumNames ? '' : 'CallSuccess');
-  static const MessageType CallError = MessageType._(3, _omitEnumNames ? '' : 'CallError');
-  static const MessageType Subscribe = MessageType._(4, _omitEnumNames ? '' : 'Subscribe');
-  static const MessageType SubscribeError = MessageType._(5, _omitEnumNames ? '' : 'SubscribeError');
-  static const MessageType Unsubscribe = MessageType._(6, _omitEnumNames ? '' : 'Unsubscribe');
-  static const MessageType Event = MessageType._(7, _omitEnumNames ? '' : 'Event');
-  static const MessageType Heartbeat = MessageType._(20, _omitEnumNames ? '' : 'Heartbeat');
+  static const MessageType Call = MessageType._(0, _omitEnumNames ? '' : 'Call');
+  static const MessageType CallSuccess = MessageType._(1, _omitEnumNames ? '' : 'CallSuccess');
+  static const MessageType CallError = MessageType._(2, _omitEnumNames ? '' : 'CallError');
+  static const MessageType Subscribe = MessageType._(3, _omitEnumNames ? '' : 'Subscribe');
+  static const MessageType SubscribeError = MessageType._(4, _omitEnumNames ? '' : 'SubscribeError');
+  static const MessageType Unsubscribe = MessageType._(5, _omitEnumNames ? '' : 'Unsubscribe');
+  static const MessageType Event = MessageType._(6, _omitEnumNames ? '' : 'Event');
 
   static const $core.List<MessageType> values = <MessageType> [
-    Welcome,
     Call,
     CallSuccess,
     CallError,
@@ -33,7 +30,6 @@ class MessageType extends $pb.ProtobufEnum {
     SubscribeError,
     Unsubscribe,
     Event,
-    Heartbeat,
   ];
 
   static final $core.Map<$core.int, MessageType> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -43,11 +39,9 @@ class MessageType extends $pb.ProtobufEnum {
 }
 
 class Domain extends $pb.ProtobufEnum {
-  static const Domain Auth = Domain._(0, _omitEnumNames ? '' : 'Auth');
-  static const Domain Users = Domain._(1, _omitEnumNames ? '' : 'Users');
+  static const Domain Users = Domain._(0, _omitEnumNames ? '' : 'Users');
 
   static const $core.List<Domain> values = <Domain> [
-    Auth,
     Users,
   ];
 

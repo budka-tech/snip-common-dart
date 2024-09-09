@@ -46,8 +46,8 @@ class Meta extends $pb.GeneratedMessage {
   factory Meta.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Meta', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
-    ..e<MessageType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: MessageType.Welcome, valueOf: MessageType.valueOf, enumValues: MessageType.values)
-    ..e<Domain>(2, _omitFieldNames ? '' : 'domain', $pb.PbFieldType.OE, defaultOrMaker: Domain.Auth, valueOf: Domain.valueOf, enumValues: Domain.values)
+    ..e<MessageType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: MessageType.Call, valueOf: MessageType.valueOf, enumValues: MessageType.values)
+    ..e<Domain>(2, _omitFieldNames ? '' : 'domain', $pb.PbFieldType.OE, defaultOrMaker: Domain.Users, valueOf: Domain.valueOf, enumValues: Domain.values)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
@@ -111,8 +111,8 @@ class Meta extends $pb.GeneratedMessage {
   void clearId() => clearField(4);
 }
 
-class CallRequest extends $pb.GeneratedMessage {
-  factory CallRequest({
+class Request extends $pb.GeneratedMessage {
+  factory Request({
     Meta? meta,
     $1.Any? data,
   }) {
@@ -125,13 +125,13 @@ class CallRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  CallRequest._() : super();
-  factory CallRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CallRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Request._() : super();
+  factory Request.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Request.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
-    ..aOM<$1.Any>(3, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -139,22 +139,22 @@ class CallRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  CallRequest clone() => CallRequest()..mergeFromMessage(this);
+  Request clone() => Request()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CallRequest copyWith(void Function(CallRequest) updates) => super.copyWith((message) => updates(message as CallRequest)) as CallRequest;
+  Request copyWith(void Function(Request) updates) => super.copyWith((message) => updates(message as Request)) as Request;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CallRequest create() => CallRequest._();
-  CallRequest createEmptyInstance() => create();
-  static $pb.PbList<CallRequest> createRepeated() => $pb.PbList<CallRequest>();
+  static Request create() => Request._();
+  Request createEmptyInstance() => create();
+  static $pb.PbList<Request> createRepeated() => $pb.PbList<Request>();
   @$core.pragma('dart2js:noInline')
-  static CallRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CallRequest>(create);
-  static CallRequest? _defaultInstance;
+  static Request getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Request>(create);
+  static Request? _defaultInstance;
 
   @$pb.TagNumber(1)
   Meta get meta => $_getN(0);
@@ -167,15 +167,15 @@ class CallRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Meta ensureMeta() => $_ensure(0);
 
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
   $1.Any get data => $_getN(1);
-  @$pb.TagNumber(3)
-  set data($1.Any v) { setField(3, v); }
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  set data($1.Any v) { setField(2, v); }
+  @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
-  @$pb.TagNumber(3)
-  void clearData() => clearField(3);
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
   $1.Any ensureData() => $_ensure(1);
 }
 
@@ -199,7 +199,7 @@ class CallResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
-    ..aOM<$1.Any>(3, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -235,15 +235,15 @@ class CallResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Meta ensureMeta() => $_ensure(0);
 
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
   $1.Any get data => $_getN(1);
-  @$pb.TagNumber(3)
-  set data($1.Any v) { setField(3, v); }
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  set data($1.Any v) { setField(2, v); }
+  @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
-  @$pb.TagNumber(3)
-  void clearData() => clearField(3);
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
   $1.Any ensureData() => $_ensure(1);
 }
 
@@ -286,6 +286,58 @@ class SubscribeRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static SubscribeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubscribeRequest>(create);
   static SubscribeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Meta get meta => $_getN(0);
+  @$pb.TagNumber(1)
+  set meta(Meta v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMeta() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeta() => clearField(1);
+  @$pb.TagNumber(1)
+  Meta ensureMeta() => $_ensure(0);
+}
+
+class UnsubscribeRequest extends $pb.GeneratedMessage {
+  factory UnsubscribeRequest({
+    Meta? meta,
+  }) {
+    final $result = create();
+    if (meta != null) {
+      $result.meta = meta;
+    }
+    return $result;
+  }
+  UnsubscribeRequest._() : super();
+  factory UnsubscribeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnsubscribeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnsubscribeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
+    ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnsubscribeRequest clone() => UnsubscribeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnsubscribeRequest copyWith(void Function(UnsubscribeRequest) updates) => super.copyWith((message) => updates(message as UnsubscribeRequest)) as UnsubscribeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnsubscribeRequest create() => UnsubscribeRequest._();
+  UnsubscribeRequest createEmptyInstance() => create();
+  static $pb.PbList<UnsubscribeRequest> createRepeated() => $pb.PbList<UnsubscribeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnsubscribeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnsubscribeRequest>(create);
+  static UnsubscribeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   Meta get meta => $_getN(0);
@@ -433,68 +485,18 @@ class SubscribeResponse extends $pb.GeneratedMessage {
   SubscribeData ensureData() => $_ensure(1);
 }
 
-class HeartbeatMessage extends $pb.GeneratedMessage {
-  factory HeartbeatMessage({
-    $core.bool? heartbeat,
-  }) {
-    final $result = create();
-    if (heartbeat != null) {
-      $result.heartbeat = heartbeat;
-    }
-    return $result;
-  }
-  HeartbeatMessage._() : super();
-  factory HeartbeatMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HeartbeatMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HeartbeatMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'heartbeat')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  HeartbeatMessage clone() => HeartbeatMessage()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  HeartbeatMessage copyWith(void Function(HeartbeatMessage) updates) => super.copyWith((message) => updates(message as HeartbeatMessage)) as HeartbeatMessage;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static HeartbeatMessage create() => HeartbeatMessage._();
-  HeartbeatMessage createEmptyInstance() => create();
-  static $pb.PbList<HeartbeatMessage> createRepeated() => $pb.PbList<HeartbeatMessage>();
-  @$core.pragma('dart2js:noInline')
-  static HeartbeatMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HeartbeatMessage>(create);
-  static HeartbeatMessage? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get heartbeat => $_getBF(0);
-  @$pb.TagNumber(1)
-  set heartbeat($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasHeartbeat() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearHeartbeat() => clearField(1);
-}
-
 class ServerApi {
   $pb.RpcClient _client;
   ServerApi(this._client);
 
-  $async.Future<CallResponse> call($pb.ClientContext? ctx, CallRequest request) =>
+  $async.Future<CallResponse> call($pb.ClientContext? ctx, Request request) =>
     _client.invoke<CallResponse>(ctx, 'Server', 'Call', request, CallResponse())
   ;
-  $async.Future<SubscribeResponse> subscribe($pb.ClientContext? ctx, SubscribeRequest request) =>
+  $async.Future<SubscribeResponse> subscribe($pb.ClientContext? ctx, Request request) =>
     _client.invoke<SubscribeResponse>(ctx, 'Server', 'Subscribe', request, SubscribeResponse())
   ;
-  $async.Future<HeartbeatMessage> heartbeat($pb.ClientContext? ctx, HeartbeatMessage request) =>
-    _client.invoke<HeartbeatMessage>(ctx, 'Server', 'Heartbeat', request, HeartbeatMessage())
+  $async.Future<$1.Any> unSubscribe($pb.ClientContext? ctx, UnsubscribeRequest request) =>
+    _client.invoke<$1.Any>(ctx, 'Server', 'UnSubscribe', request, $1.Any())
   ;
 }
 

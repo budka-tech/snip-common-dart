@@ -15,30 +15,31 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../google/protobuf/any.pb.dart' as $1;
 import 'server.pb.dart' as $2;
 import 'server.pbjson.dart';
 
 export 'server.pb.dart';
 
 abstract class ServerServiceBase extends $pb.GeneratedService {
-  $async.Future<$2.CallResponse> call($pb.ServerContext ctx, $2.CallRequest request);
-  $async.Future<$2.SubscribeResponse> subscribe($pb.ServerContext ctx, $2.SubscribeRequest request);
-  $async.Future<$2.HeartbeatMessage> heartbeat($pb.ServerContext ctx, $2.HeartbeatMessage request);
+  $async.Future<$2.CallResponse> call($pb.ServerContext ctx, $2.Request request);
+  $async.Future<$2.SubscribeResponse> subscribe($pb.ServerContext ctx, $2.Request request);
+  $async.Future<$1.Any> unSubscribe($pb.ServerContext ctx, $2.UnsubscribeRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'Call': return $2.CallRequest();
-      case 'Subscribe': return $2.SubscribeRequest();
-      case 'Heartbeat': return $2.HeartbeatMessage();
+      case 'Call': return $2.Request();
+      case 'Subscribe': return $2.Request();
+      case 'UnSubscribe': return $2.UnsubscribeRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'Call': return this.call(ctx, request as $2.CallRequest);
-      case 'Subscribe': return this.subscribe(ctx, request as $2.SubscribeRequest);
-      case 'Heartbeat': return this.heartbeat(ctx, request as $2.HeartbeatMessage);
+      case 'Call': return this.call(ctx, request as $2.Request);
+      case 'Subscribe': return this.subscribe(ctx, request as $2.Request);
+      case 'UnSubscribe': return this.unSubscribe(ctx, request as $2.UnsubscribeRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
