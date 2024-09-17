@@ -63,25 +63,25 @@ const GetFlashCallResponse$json = {
 final $typed_data.Uint8List getFlashCallResponseDescriptor = $convert.base64Decode(
     'ChRHZXRGbGFzaENhbGxSZXNwb25zZRIWCgZzdGF0dXMYASABKAhSBnN0YXR1cw==');
 
-const $core.Map<$core.String, $core.dynamic> SmsServiceBase$json = {
-  '1': 'Sms',
+const $core.Map<$core.String, $core.dynamic> GsmServiceBase$json = {
+  '1': 'Gsm',
   '2': [
     {'1': 'GetSms', '2': '.gsm.GetSmsRequest', '3': '.gsm.GetSmsResponse'},
     {'1': 'GetFlashCall', '2': '.gsm.GetFlashCallRequest', '3': '.gsm.GetFlashCallResponse'},
   ],
 };
 
-@$core.Deprecated('Use smsServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> SmsServiceBase$messageJson = {
+@$core.Deprecated('Use gsmServiceDescriptor instead')
+const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> GsmServiceBase$messageJson = {
   '.gsm.GetSmsRequest': GetSmsRequest$json,
   '.gsm.GetSmsResponse': GetSmsResponse$json,
   '.gsm.GetFlashCallRequest': GetFlashCallRequest$json,
   '.gsm.GetFlashCallResponse': GetFlashCallResponse$json,
 };
 
-/// Descriptor for `Sms`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List smsServiceDescriptor = $convert.base64Decode(
-    'CgNTbXMSMQoGR2V0U21zEhIuZ3NtLkdldFNtc1JlcXVlc3QaEy5nc20uR2V0U21zUmVzcG9uc2'
+/// Descriptor for `Gsm`. Decode as a `google.protobuf.ServiceDescriptorProto`.
+final $typed_data.Uint8List gsmServiceDescriptor = $convert.base64Decode(
+    'CgNHc20SMQoGR2V0U21zEhIuZ3NtLkdldFNtc1JlcXVlc3QaEy5nc20uR2V0U21zUmVzcG9uc2'
     'USQwoMR2V0Rmxhc2hDYWxsEhguZ3NtLkdldEZsYXNoQ2FsbFJlcXVlc3QaGS5nc20uR2V0Rmxh'
     'c2hDYWxsUmVzcG9uc2U=');
 

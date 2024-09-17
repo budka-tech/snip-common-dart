@@ -228,15 +228,15 @@ class GetFlashCallResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(1);
 }
 
-class SmsApi {
+class GsmApi {
   $pb.RpcClient _client;
-  SmsApi(this._client);
+  GsmApi(this._client);
 
   $async.Future<GetSmsResponse> getSms($pb.ClientContext? ctx, GetSmsRequest request) =>
-    _client.invoke<GetSmsResponse>(ctx, 'Sms', 'GetSms', request, GetSmsResponse())
+    _client.invoke<GetSmsResponse>(ctx, 'Gsm', 'GetSms', request, GetSmsResponse())
   ;
   $async.Future<GetFlashCallResponse> getFlashCall($pb.ClientContext? ctx, GetFlashCallRequest request) =>
-    _client.invoke<GetFlashCallResponse>(ctx, 'Sms', 'GetFlashCall', request, GetFlashCallResponse())
+    _client.invoke<GetFlashCallResponse>(ctx, 'Gsm', 'GetFlashCall', request, GetFlashCallResponse())
   ;
 }
 

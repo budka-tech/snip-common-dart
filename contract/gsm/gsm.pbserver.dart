@@ -20,7 +20,7 @@ import 'gsm.pbjson.dart';
 
 export 'gsm.pb.dart';
 
-abstract class SmsServiceBase extends $pb.GeneratedService {
+abstract class GsmServiceBase extends $pb.GeneratedService {
   $async.Future<$0.GetSmsResponse> getSms($pb.ServerContext ctx, $0.GetSmsRequest request);
   $async.Future<$0.GetFlashCallResponse> getFlashCall($pb.ServerContext ctx, $0.GetFlashCallRequest request);
 
@@ -40,7 +40,7 @@ abstract class SmsServiceBase extends $pb.GeneratedService {
     }
   }
 
-  $core.Map<$core.String, $core.dynamic> get $json => SmsServiceBase$json;
-  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> get $messageJson => SmsServiceBase$messageJson;
+  $core.Map<$core.String, $core.dynamic> get $json => GsmServiceBase$json;
+  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> get $messageJson => GsmServiceBase$messageJson;
 }
 
