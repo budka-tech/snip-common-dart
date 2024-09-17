@@ -15,6 +15,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../google/protobuf/timestamp.pb.dart' as $3;
+
 class CommonRequest extends $pb.GeneratedMessage {
   factory CommonRequest({
     $core.int? accountId,
@@ -356,15 +358,20 @@ class LoginResponse extends $pb.GeneratedMessage {
 class Account extends $pb.GeneratedMessage {
   factory Account({
     $core.int? id,
-    $core.Iterable<$core.String>? phones,
+    $core.Iterable<AccountPhone>? phones,
+    $core.Iterable<AccountEmail>? emails,
+    $core.Iterable<AccountRole>? roles,
     $core.String? photo,
     $core.String? name,
     $core.String? surname,
     $core.String? patronymic,
-    $core.String? birthdate,
+    $3.Timestamp? birthdate,
     $core.int? country,
+    $core.int? district,
     $core.int? locale,
     $core.int? timezone,
+    $3.Timestamp? createdAt,
+    $3.Timestamp? updatedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -372,6 +379,12 @@ class Account extends $pb.GeneratedMessage {
     }
     if (phones != null) {
       $result.phones.addAll(phones);
+    }
+    if (emails != null) {
+      $result.emails.addAll(emails);
+    }
+    if (roles != null) {
+      $result.roles.addAll(roles);
     }
     if (photo != null) {
       $result.photo = photo;
@@ -391,11 +404,20 @@ class Account extends $pb.GeneratedMessage {
     if (country != null) {
       $result.country = country;
     }
+    if (district != null) {
+      $result.district = district;
+    }
     if (locale != null) {
       $result.locale = locale;
     }
     if (timezone != null) {
       $result.timezone = timezone;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
     }
     return $result;
   }
@@ -405,15 +427,20 @@ class Account extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Account', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.O3)
-    ..pPS(2, _omitFieldNames ? '' : 'phones')
-    ..aOS(3, _omitFieldNames ? '' : 'photo')
-    ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..aOS(5, _omitFieldNames ? '' : 'surname')
-    ..aOS(6, _omitFieldNames ? '' : 'patronymic')
-    ..aOS(7, _omitFieldNames ? '' : 'birthdate')
-    ..a<$core.int>(8, _omitFieldNames ? '' : 'country', $pb.PbFieldType.O3)
-    ..a<$core.int>(9, _omitFieldNames ? '' : 'locale', $pb.PbFieldType.O3)
-    ..a<$core.int>(10, _omitFieldNames ? '' : 'timezone', $pb.PbFieldType.O3)
+    ..pc<AccountPhone>(2, _omitFieldNames ? '' : 'phones', $pb.PbFieldType.PM, subBuilder: AccountPhone.create)
+    ..pc<AccountEmail>(3, _omitFieldNames ? '' : 'emails', $pb.PbFieldType.PM, subBuilder: AccountEmail.create)
+    ..pc<AccountRole>(4, _omitFieldNames ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: AccountRole.create)
+    ..aOS(5, _omitFieldNames ? '' : 'photo')
+    ..aOS(6, _omitFieldNames ? '' : 'name')
+    ..aOS(7, _omitFieldNames ? '' : 'surname')
+    ..aOS(8, _omitFieldNames ? '' : 'patronymic')
+    ..aOM<$3.Timestamp>(9, _omitFieldNames ? '' : 'birthdate', subBuilder: $3.Timestamp.create)
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'country', $pb.PbFieldType.O3)
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'district', $pb.PbFieldType.O3)
+    ..a<$core.int>(12, _omitFieldNames ? '' : 'locale', $pb.PbFieldType.O3)
+    ..a<$core.int>(13, _omitFieldNames ? '' : 'timezone', $pb.PbFieldType.O3)
+    ..aOM<$3.Timestamp>(14, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(15, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -448,79 +475,474 @@ class Account extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get phones => $_getList(1);
+  $core.List<AccountPhone> get phones => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.String get photo => $_getSZ(2);
+  $core.List<AccountEmail> get emails => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<AccountRole> get roles => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get photo => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set photo($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPhoto() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPhoto() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get name => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set name($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearName() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get surname => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set surname($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasSurname() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSurname() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get patronymic => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set patronymic($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPatronymic() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPatronymic() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $3.Timestamp get birthdate => $_getN(8);
+  @$pb.TagNumber(9)
+  set birthdate($3.Timestamp v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasBirthdate() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBirthdate() => clearField(9);
+  @$pb.TagNumber(9)
+  $3.Timestamp ensureBirthdate() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $core.int get country => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set country($core.int v) { $_setSignedInt32(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCountry() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCountry() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get district => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set district($core.int v) { $_setSignedInt32(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasDistrict() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDistrict() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get locale => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set locale($core.int v) { $_setSignedInt32(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasLocale() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLocale() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get timezone => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set timezone($core.int v) { $_setSignedInt32(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasTimezone() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearTimezone() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $3.Timestamp get createdAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set createdAt($3.Timestamp v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedAt() => clearField(14);
+  @$pb.TagNumber(14)
+  $3.Timestamp ensureCreatedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $3.Timestamp get updatedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set updatedAt($3.Timestamp v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasUpdatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearUpdatedAt() => clearField(15);
+  @$pb.TagNumber(15)
+  $3.Timestamp ensureUpdatedAt() => $_ensure(14);
+}
+
+class AccountEmail extends $pb.GeneratedMessage {
+  factory AccountEmail({
+    $fixnum.Int64? id,
+    $core.int? accountId,
+    $core.String? email,
+    $core.int? order,
+    $3.Timestamp? createdAt,
+    $3.Timestamp? updatedAt,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (accountId != null) {
+      $result.accountId = accountId;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (order != null) {
+      $result.order = order;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    return $result;
+  }
+  AccountEmail._() : super();
+  factory AccountEmail.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AccountEmail.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AccountEmail', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3)
+    ..aOS(3, _omitFieldNames ? '' : 'email')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
+    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AccountEmail clone() => AccountEmail()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AccountEmail copyWith(void Function(AccountEmail) updates) => super.copyWith((message) => updates(message as AccountEmail)) as AccountEmail;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AccountEmail create() => AccountEmail._();
+  AccountEmail createEmptyInstance() => create();
+  static $pb.PbList<AccountEmail> createRepeated() => $pb.PbList<AccountEmail>();
+  @$core.pragma('dart2js:noInline')
+  static AccountEmail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AccountEmail>(create);
+  static AccountEmail? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get accountId => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set accountId($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => clearField(2);
+
   @$pb.TagNumber(3)
-  set photo($core.String v) { $_setString(2, v); }
+  $core.String get email => $_getSZ(2);
   @$pb.TagNumber(3)
-  $core.bool hasPhoto() => $_has(2);
+  set email($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  void clearPhoto() => clearField(3);
+  $core.bool hasEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEmail() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get name => $_getSZ(3);
+  $core.int get order => $_getIZ(3);
   @$pb.TagNumber(4)
-  set name($core.String v) { $_setString(3, v); }
+  set order($core.int v) { $_setSignedInt32(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasName() => $_has(3);
+  $core.bool hasOrder() => $_has(3);
   @$pb.TagNumber(4)
-  void clearName() => clearField(4);
+  void clearOrder() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get surname => $_getSZ(4);
+  $3.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set surname($core.String v) { $_setString(4, v); }
+  set createdAt($3.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasSurname() => $_has(4);
+  $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSurname() => clearField(5);
+  void clearCreatedAt() => clearField(5);
+  @$pb.TagNumber(5)
+  $3.Timestamp ensureCreatedAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.String get patronymic => $_getSZ(5);
+  $3.Timestamp get updatedAt => $_getN(5);
   @$pb.TagNumber(6)
-  set patronymic($core.String v) { $_setString(5, v); }
+  set updatedAt($3.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasPatronymic() => $_has(5);
+  $core.bool hasUpdatedAt() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPatronymic() => clearField(6);
+  void clearUpdatedAt() => clearField(6);
+  @$pb.TagNumber(6)
+  $3.Timestamp ensureUpdatedAt() => $_ensure(5);
+}
 
-  @$pb.TagNumber(7)
-  $core.String get birthdate => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set birthdate($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasBirthdate() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearBirthdate() => clearField(7);
+class AccountPhone extends $pb.GeneratedMessage {
+  factory AccountPhone({
+    $fixnum.Int64? id,
+    $core.int? accountId,
+    $core.String? phone,
+    $core.int? order,
+    $3.Timestamp? createdAt,
+    $3.Timestamp? updatedAt,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (accountId != null) {
+      $result.accountId = accountId;
+    }
+    if (phone != null) {
+      $result.phone = phone;
+    }
+    if (order != null) {
+      $result.order = order;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
+    }
+    return $result;
+  }
+  AccountPhone._() : super();
+  factory AccountPhone.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AccountPhone.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  @$pb.TagNumber(8)
-  $core.int get country => $_getIZ(7);
-  @$pb.TagNumber(8)
-  set country($core.int v) { $_setSignedInt32(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasCountry() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearCountry() => clearField(8);
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AccountPhone', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3)
+    ..aOS(3, _omitFieldNames ? '' : 'phone')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
+    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..aOM<$3.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
 
-  @$pb.TagNumber(9)
-  $core.int get locale => $_getIZ(8);
-  @$pb.TagNumber(9)
-  set locale($core.int v) { $_setSignedInt32(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasLocale() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearLocale() => clearField(9);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AccountPhone clone() => AccountPhone()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AccountPhone copyWith(void Function(AccountPhone) updates) => super.copyWith((message) => updates(message as AccountPhone)) as AccountPhone;
 
-  @$pb.TagNumber(10)
-  $core.int get timezone => $_getIZ(9);
-  @$pb.TagNumber(10)
-  set timezone($core.int v) { $_setSignedInt32(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasTimezone() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearTimezone() => clearField(10);
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AccountPhone create() => AccountPhone._();
+  AccountPhone createEmptyInstance() => create();
+  static $pb.PbList<AccountPhone> createRepeated() => $pb.PbList<AccountPhone>();
+  @$core.pragma('dart2js:noInline')
+  static AccountPhone getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AccountPhone>(create);
+  static AccountPhone? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get accountId => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set accountId($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get phone => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set phone($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPhone() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPhone() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get order => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set order($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOrder() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrder() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $3.Timestamp get createdAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdAt($3.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => clearField(5);
+  @$pb.TagNumber(5)
+  $3.Timestamp ensureCreatedAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $3.Timestamp get updatedAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set updatedAt($3.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUpdatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUpdatedAt() => clearField(6);
+  @$pb.TagNumber(6)
+  $3.Timestamp ensureUpdatedAt() => $_ensure(5);
+}
+
+class AccountRole extends $pb.GeneratedMessage {
+  factory AccountRole({
+    $fixnum.Int64? id,
+    $core.int? accountId,
+    $core.String? role,
+    $core.int? order,
+    $3.Timestamp? createdAt,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (accountId != null) {
+      $result.accountId = accountId;
+    }
+    if (role != null) {
+      $result.role = role;
+    }
+    if (order != null) {
+      $result.order = order;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    return $result;
+  }
+  AccountRole._() : super();
+  factory AccountRole.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AccountRole.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AccountRole', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3)
+    ..aOS(3, _omitFieldNames ? '' : 'role')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
+    ..aOM<$3.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $3.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AccountRole clone() => AccountRole()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AccountRole copyWith(void Function(AccountRole) updates) => super.copyWith((message) => updates(message as AccountRole)) as AccountRole;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AccountRole create() => AccountRole._();
+  AccountRole createEmptyInstance() => create();
+  static $pb.PbList<AccountRole> createRepeated() => $pb.PbList<AccountRole>();
+  @$core.pragma('dart2js:noInline')
+  static AccountRole getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AccountRole>(create);
+  static AccountRole? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get accountId => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set accountId($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get role => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set role($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRole() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get order => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set order($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOrder() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrder() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $3.Timestamp get createdAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set createdAt($3.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => clearField(5);
+  @$pb.TagNumber(5)
+  $3.Timestamp ensureCreatedAt() => $_ensure(4);
 }
 
 class UpdateAccountDataRequest extends $pb.GeneratedMessage {
