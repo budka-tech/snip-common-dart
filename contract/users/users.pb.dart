@@ -70,14 +70,14 @@ class CommonRequest extends $pb.GeneratedMessage {
 class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse({
     $core.bool? status,
-    $core.Iterable<$core.int>? codes,
+    $core.int? code,
   }) {
     final $result = create();
     if (status != null) {
       $result.status = status;
     }
-    if (codes != null) {
-      $result.codes.addAll(codes);
+    if (code != null) {
+      $result.code = code;
     }
     return $result;
   }
@@ -87,7 +87,7 @@ class CommonResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'status')
-    ..p<$core.int>(2, _omitFieldNames ? '' : 'codes', $pb.PbFieldType.KU3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
@@ -122,7 +122,13 @@ class CommonResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.int> get codes => $_getList(1);
+  $core.int get code => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set code($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => clearField(2);
 }
 
 class HasSessionRequest extends $pb.GeneratedMessage {

@@ -32,14 +32,14 @@ const CommonResponse$json = {
   '1': 'CommonResponse',
   '2': [
     {'1': 'status', '3': 1, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'codes', '3': 2, '4': 3, '5': 13, '10': 'codes'},
+    {'1': 'code', '3': 2, '4': 1, '5': 13, '10': 'code'},
   ],
 };
 
 /// Descriptor for `CommonResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List commonResponseDescriptor = $convert.base64Decode(
-    'Cg5Db21tb25SZXNwb25zZRIWCgZzdGF0dXMYASABKAhSBnN0YXR1cxIUCgVjb2RlcxgCIAMoDV'
-    'IFY29kZXM=');
+    'Cg5Db21tb25SZXNwb25zZRIWCgZzdGF0dXMYASABKAhSBnN0YXR1cxISCgRjb2RlGAIgASgNUg'
+    'Rjb2Rl');
 
 @$core.Deprecated('Use hasSessionRequestDescriptor instead')
 const HasSessionRequest$json = {
