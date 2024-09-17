@@ -21,7 +21,7 @@ import 'users.pbjson.dart';
 export 'users.pb.dart';
 
 abstract class UsersServiceBase extends $pb.GeneratedService {
-  $async.Future<$4.LoginResponse> register($pb.ServerContext ctx, $4.RegisterRequest request);
+  $async.Future<$4.CommonResponse> register($pb.ServerContext ctx, $4.RegisterRequest request);
   $async.Future<$4.LoginResponse> login($pb.ServerContext ctx, $4.LoginRequest request);
   $async.Future<$4.CommonResponse> hasSession($pb.ServerContext ctx, $4.HasSessionRequest request);
   $async.Future<$4.Account> getAccount($pb.ServerContext ctx, $4.CommonRequest request);

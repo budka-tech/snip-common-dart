@@ -1409,8 +1409,8 @@ class UsersApi {
   $pb.RpcClient _client;
   UsersApi(this._client);
 
-  $async.Future<LoginResponse> register($pb.ClientContext? ctx, RegisterRequest request) =>
-    _client.invoke<LoginResponse>(ctx, 'Users', 'Register', request, LoginResponse())
+  $async.Future<CommonResponse> register($pb.ClientContext? ctx, RegisterRequest request) =>
+    _client.invoke<CommonResponse>(ctx, 'Users', 'Register', request, CommonResponse())
   ;
   $async.Future<LoginResponse> login($pb.ClientContext? ctx, LoginRequest request) =>
     _client.invoke<LoginResponse>(ctx, 'Users', 'Login', request, LoginResponse())

@@ -282,7 +282,7 @@ final $typed_data.Uint8List removePhoneRequestDescriptor = $convert.base64Decode
 const $core.Map<$core.String, $core.dynamic> UsersServiceBase$json = {
   '1': 'Users',
   '2': [
-    {'1': 'Register', '2': '.users.RegisterRequest', '3': '.users.LoginResponse'},
+    {'1': 'Register', '2': '.users.RegisterRequest', '3': '.users.CommonResponse'},
     {'1': 'Login', '2': '.users.LoginRequest', '3': '.users.LoginResponse'},
     {'1': 'HasSession', '2': '.users.HasSessionRequest', '3': '.users.CommonResponse'},
     {'1': 'GetAccount', '2': '.users.CommonRequest', '3': '.users.Account'},
@@ -298,15 +298,15 @@ const $core.Map<$core.String, $core.dynamic> UsersServiceBase$json = {
 @$core.Deprecated('Use usersServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> UsersServiceBase$messageJson = {
   '.users.RegisterRequest': RegisterRequest$json,
+  '.users.CommonResponse': CommonResponse$json,
+  '.users.LoginRequest': LoginRequest$json,
   '.users.LoginResponse': LoginResponse$json,
   '.users.Account': Account$json,
   '.users.AccountPhone': AccountPhone$json,
   '.google.protobuf.Timestamp': $3.Timestamp$json,
   '.users.AccountEmail': AccountEmail$json,
   '.users.AccountRole': AccountRole$json,
-  '.users.LoginRequest': LoginRequest$json,
   '.users.HasSessionRequest': HasSessionRequest$json,
-  '.users.CommonResponse': CommonResponse$json,
   '.users.CommonRequest': CommonRequest$json,
   '.users.UpdateAccountDataRequest': UpdateAccountDataRequest$json,
   '.users.UpdatePasswordRequest': UpdatePasswordRequest$json,
@@ -317,16 +317,16 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> UsersServi
 
 /// Descriptor for `Users`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List usersServiceDescriptor = $convert.base64Decode(
-    'CgVVc2VycxI4CghSZWdpc3RlchIWLnVzZXJzLlJlZ2lzdGVyUmVxdWVzdBoULnVzZXJzLkxvZ2'
-    'luUmVzcG9uc2USMgoFTG9naW4SEy51c2Vycy5Mb2dpblJlcXVlc3QaFC51c2Vycy5Mb2dpblJl'
-    'c3BvbnNlEj0KCkhhc1Nlc3Npb24SGC51c2Vycy5IYXNTZXNzaW9uUmVxdWVzdBoVLnVzZXJzLk'
-    'NvbW1vblJlc3BvbnNlEjIKCkdldEFjY291bnQSFC51c2Vycy5Db21tb25SZXF1ZXN0Gg4udXNl'
-    'cnMuQWNjb3VudBJLChFVcGRhdGVBY2NvdW50RGF0YRIfLnVzZXJzLlVwZGF0ZUFjY291bnREYX'
-    'RhUmVxdWVzdBoVLnVzZXJzLkNvbW1vblJlc3BvbnNlEkUKDlVwZGF0ZVBhc3N3b3JkEhwudXNl'
-    'cnMuVXBkYXRlUGFzc3dvcmRSZXF1ZXN0GhUudXNlcnMuQ29tbW9uUmVzcG9uc2USPwoLVXBkYX'
-    'RlUGhvdG8SGS51c2Vycy5VcGRhdGVQaG90b1JlcXVlc3QaFS51c2Vycy5Db21tb25SZXNwb25z'
-    'ZRI5CghBZGRQaG9uZRIWLnVzZXJzLkFkZFBob25lUmVxdWVzdBoVLnVzZXJzLkNvbW1vblJlc3'
-    'BvbnNlEj8KC1VwZGF0ZVBob25lEhkudXNlcnMuVXBkYXRlUGhvdG9SZXF1ZXN0GhUudXNlcnMu'
-    'Q29tbW9uUmVzcG9uc2USPwoLUmVtb3ZlUGhvbmUSGS51c2Vycy5SZW1vdmVQaG9uZVJlcXVlc3'
-    'QaFS51c2Vycy5Db21tb25SZXNwb25zZQ==');
+    'CgVVc2VycxI5CghSZWdpc3RlchIWLnVzZXJzLlJlZ2lzdGVyUmVxdWVzdBoVLnVzZXJzLkNvbW'
+    '1vblJlc3BvbnNlEjIKBUxvZ2luEhMudXNlcnMuTG9naW5SZXF1ZXN0GhQudXNlcnMuTG9naW5S'
+    'ZXNwb25zZRI9CgpIYXNTZXNzaW9uEhgudXNlcnMuSGFzU2Vzc2lvblJlcXVlc3QaFS51c2Vycy'
+    '5Db21tb25SZXNwb25zZRIyCgpHZXRBY2NvdW50EhQudXNlcnMuQ29tbW9uUmVxdWVzdBoOLnVz'
+    'ZXJzLkFjY291bnQSSwoRVXBkYXRlQWNjb3VudERhdGESHy51c2Vycy5VcGRhdGVBY2NvdW50RG'
+    'F0YVJlcXVlc3QaFS51c2Vycy5Db21tb25SZXNwb25zZRJFCg5VcGRhdGVQYXNzd29yZBIcLnVz'
+    'ZXJzLlVwZGF0ZVBhc3N3b3JkUmVxdWVzdBoVLnVzZXJzLkNvbW1vblJlc3BvbnNlEj8KC1VwZG'
+    'F0ZVBob3RvEhkudXNlcnMuVXBkYXRlUGhvdG9SZXF1ZXN0GhUudXNlcnMuQ29tbW9uUmVzcG9u'
+    'c2USOQoIQWRkUGhvbmUSFi51c2Vycy5BZGRQaG9uZVJlcXVlc3QaFS51c2Vycy5Db21tb25SZX'
+    'Nwb25zZRI/CgtVcGRhdGVQaG9uZRIZLnVzZXJzLlVwZGF0ZVBob3RvUmVxdWVzdBoVLnVzZXJz'
+    'LkNvbW1vblJlc3BvbnNlEj8KC1JlbW92ZVBob25lEhkudXNlcnMuUmVtb3ZlUGhvbmVSZXF1ZX'
+    'N0GhUudXNlcnMuQ29tbW9uUmVzcG9uc2U=');
 
