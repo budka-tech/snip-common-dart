@@ -1,6 +1,6 @@
 enum Status {
   /** Успешно */
-  Success,
+  OK,
 
   /** Любая ошибка */
   Any,
@@ -46,9 +46,6 @@ enum Status {
 
   /** Операция не удалась */
   OperationFailed,
-
-  /** Конфликт */
-  Conflict,
 
   /** Не реализован */
   NotImplemented
