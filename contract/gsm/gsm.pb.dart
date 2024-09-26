@@ -14,26 +14,90 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class GetSmsRequest extends $pb.GeneratedMessage {
-  factory GetSmsRequest({
-    $core.int? userId,
+class CommonResponse extends $pb.GeneratedMessage {
+  factory CommonResponse({
+    $core.bool? status,
+    $core.int? code,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (code != null) {
+      $result.code = code;
+    }
+    return $result;
+  }
+  CommonResponse._() : super();
+  factory CommonResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CommonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'status')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CommonResponse clone() => CommonResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CommonResponse copyWith(void Function(CommonResponse) updates) => super.copyWith((message) => updates(message as CommonResponse)) as CommonResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CommonResponse create() => CommonResponse._();
+  CommonResponse createEmptyInstance() => create();
+  static $pb.PbList<CommonResponse> createRepeated() => $pb.PbList<CommonResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CommonResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommonResponse>(create);
+  static CommonResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get status => $_getBF(0);
+  @$pb.TagNumber(1)
+  set status($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get code => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set code($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => clearField(2);
+}
+
+class SendSmsRequest extends $pb.GeneratedMessage {
+  factory SendSmsRequest({
+    $core.String? message,
     $core.String? phone,
   }) {
     final $result = create();
-    if (userId != null) {
-      $result.userId = userId;
+    if (message != null) {
+      $result.message = message;
     }
     if (phone != null) {
       $result.phone = phone;
     }
     return $result;
   }
-  GetSmsRequest._() : super();
-  factory GetSmsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetSmsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SendSmsRequest._() : super();
+  factory SendSmsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SendSmsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSmsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'userId', $pb.PbFieldType.O3, protoName: 'userId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendSmsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'message')
     ..aOS(2, _omitFieldNames ? '' : 'phone')
     ..hasRequiredFields = false
   ;
@@ -42,31 +106,31 @@ class GetSmsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetSmsRequest clone() => GetSmsRequest()..mergeFromMessage(this);
+  SendSmsRequest clone() => SendSmsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetSmsRequest copyWith(void Function(GetSmsRequest) updates) => super.copyWith((message) => updates(message as GetSmsRequest)) as GetSmsRequest;
+  SendSmsRequest copyWith(void Function(SendSmsRequest) updates) => super.copyWith((message) => updates(message as SendSmsRequest)) as SendSmsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetSmsRequest create() => GetSmsRequest._();
-  GetSmsRequest createEmptyInstance() => create();
-  static $pb.PbList<GetSmsRequest> createRepeated() => $pb.PbList<GetSmsRequest>();
+  static SendSmsRequest create() => SendSmsRequest._();
+  SendSmsRequest createEmptyInstance() => create();
+  static $pb.PbList<SendSmsRequest> createRepeated() => $pb.PbList<SendSmsRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetSmsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSmsRequest>(create);
-  static GetSmsRequest? _defaultInstance;
+  static SendSmsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendSmsRequest>(create);
+  static SendSmsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get userId => $_getIZ(0);
+  $core.String get message => $_getSZ(0);
   @$pb.TagNumber(1)
-  set userId($core.int v) { $_setSignedInt32(0, v); }
+  set message($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasUserId() => $_has(0);
+  $core.bool hasMessage() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
+  void clearMessage() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get phone => $_getSZ(1);
@@ -78,58 +142,8 @@ class GetSmsRequest extends $pb.GeneratedMessage {
   void clearPhone() => clearField(2);
 }
 
-class GetSmsResponse extends $pb.GeneratedMessage {
-  factory GetSmsResponse({
-    $core.String? sms,
-  }) {
-    final $result = create();
-    if (sms != null) {
-      $result.sms = sms;
-    }
-    return $result;
-  }
-  GetSmsResponse._() : super();
-  factory GetSmsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetSmsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSmsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'sms')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetSmsResponse clone() => GetSmsResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetSmsResponse copyWith(void Function(GetSmsResponse) updates) => super.copyWith((message) => updates(message as GetSmsResponse)) as GetSmsResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetSmsResponse create() => GetSmsResponse._();
-  GetSmsResponse createEmptyInstance() => create();
-  static $pb.PbList<GetSmsResponse> createRepeated() => $pb.PbList<GetSmsResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetSmsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSmsResponse>(create);
-  static GetSmsResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get sms => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set sms($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasSms() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearSms() => clearField(1);
-}
-
-class GetFlashCallRequest extends $pb.GeneratedMessage {
-  factory GetFlashCallRequest({
+class FlashCallRequest extends $pb.GeneratedMessage {
+  factory FlashCallRequest({
     $core.String? phone,
   }) {
     final $result = create();
@@ -138,11 +152,11 @@ class GetFlashCallRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetFlashCallRequest._() : super();
-  factory GetFlashCallRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetFlashCallRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  FlashCallRequest._() : super();
+  factory FlashCallRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FlashCallRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFlashCallRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FlashCallRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'phone')
     ..hasRequiredFields = false
   ;
@@ -151,22 +165,22 @@ class GetFlashCallRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetFlashCallRequest clone() => GetFlashCallRequest()..mergeFromMessage(this);
+  FlashCallRequest clone() => FlashCallRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetFlashCallRequest copyWith(void Function(GetFlashCallRequest) updates) => super.copyWith((message) => updates(message as GetFlashCallRequest)) as GetFlashCallRequest;
+  FlashCallRequest copyWith(void Function(FlashCallRequest) updates) => super.copyWith((message) => updates(message as FlashCallRequest)) as FlashCallRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetFlashCallRequest create() => GetFlashCallRequest._();
-  GetFlashCallRequest createEmptyInstance() => create();
-  static $pb.PbList<GetFlashCallRequest> createRepeated() => $pb.PbList<GetFlashCallRequest>();
+  static FlashCallRequest create() => FlashCallRequest._();
+  FlashCallRequest createEmptyInstance() => create();
+  static $pb.PbList<FlashCallRequest> createRepeated() => $pb.PbList<FlashCallRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetFlashCallRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFlashCallRequest>(create);
-  static GetFlashCallRequest? _defaultInstance;
+  static FlashCallRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FlashCallRequest>(create);
+  static FlashCallRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get phone => $_getSZ(0);
@@ -178,65 +192,15 @@ class GetFlashCallRequest extends $pb.GeneratedMessage {
   void clearPhone() => clearField(1);
 }
 
-class GetFlashCallResponse extends $pb.GeneratedMessage {
-  factory GetFlashCallResponse({
-    $core.bool? status,
-  }) {
-    final $result = create();
-    if (status != null) {
-      $result.status = status;
-    }
-    return $result;
-  }
-  GetFlashCallResponse._() : super();
-  factory GetFlashCallResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetFlashCallResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFlashCallResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'status')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetFlashCallResponse clone() => GetFlashCallResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetFlashCallResponse copyWith(void Function(GetFlashCallResponse) updates) => super.copyWith((message) => updates(message as GetFlashCallResponse)) as GetFlashCallResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static GetFlashCallResponse create() => GetFlashCallResponse._();
-  GetFlashCallResponse createEmptyInstance() => create();
-  static $pb.PbList<GetFlashCallResponse> createRepeated() => $pb.PbList<GetFlashCallResponse>();
-  @$core.pragma('dart2js:noInline')
-  static GetFlashCallResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFlashCallResponse>(create);
-  static GetFlashCallResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get status => $_getBF(0);
-  @$pb.TagNumber(1)
-  set status($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasStatus() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
-}
-
 class GsmApi {
   $pb.RpcClient _client;
   GsmApi(this._client);
 
-  $async.Future<GetSmsResponse> getSms($pb.ClientContext? ctx, GetSmsRequest request) =>
-    _client.invoke<GetSmsResponse>(ctx, 'Gsm', 'GetSms', request, GetSmsResponse())
+  $async.Future<CommonResponse> sendSms($pb.ClientContext? ctx, SendSmsRequest request) =>
+    _client.invoke<CommonResponse>(ctx, 'Gsm', 'SendSms', request, CommonResponse())
   ;
-  $async.Future<GetFlashCallResponse> getFlashCall($pb.ClientContext? ctx, GetFlashCallRequest request) =>
-    _client.invoke<GetFlashCallResponse>(ctx, 'Gsm', 'GetFlashCall', request, GetFlashCallResponse())
+  $async.Future<CommonResponse> flashCall($pb.ClientContext? ctx, FlashCallRequest request) =>
+    _client.invoke<CommonResponse>(ctx, 'Gsm', 'FlashCall', request, CommonResponse())
   ;
 }
 

@@ -17,56 +17,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/timestamp.pb.dart' as $3;
 
-class CommonRequest extends $pb.GeneratedMessage {
-  factory CommonRequest({
-    $core.int? accountId,
-  }) {
-    final $result = create();
-    if (accountId != null) {
-      $result.accountId = accountId;
-    }
-    return $result;
-  }
-  CommonRequest._() : super();
-  factory CommonRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CommonRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3, protoName: 'accountId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CommonRequest clone() => CommonRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CommonRequest copyWith(void Function(CommonRequest) updates) => super.copyWith((message) => updates(message as CommonRequest)) as CommonRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static CommonRequest create() => CommonRequest._();
-  CommonRequest createEmptyInstance() => create();
-  static $pb.PbList<CommonRequest> createRepeated() => $pb.PbList<CommonRequest>();
-  @$core.pragma('dart2js:noInline')
-  static CommonRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommonRequest>(create);
-  static CommonRequest? _defaultInstance;
-
-  @$pb.TagNumber(2)
-  $core.int get accountId => $_getIZ(0);
-  @$pb.TagNumber(2)
-  set accountId($core.int v) { $_setUnsignedInt32(0, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasAccountId() => $_has(0);
-  @$pb.TagNumber(2)
-  void clearAccountId() => clearField(2);
-}
-
 class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse({
     $core.bool? status,
@@ -129,6 +79,56 @@ class CommonResponse extends $pb.GeneratedMessage {
   $core.bool hasCode() => $_has(1);
   @$pb.TagNumber(2)
   void clearCode() => clearField(2);
+}
+
+class CommonRequest extends $pb.GeneratedMessage {
+  factory CommonRequest({
+    $core.int? accountId,
+  }) {
+    final $result = create();
+    if (accountId != null) {
+      $result.accountId = accountId;
+    }
+    return $result;
+  }
+  CommonRequest._() : super();
+  factory CommonRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CommonRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3, protoName: 'accountId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CommonRequest clone() => CommonRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CommonRequest copyWith(void Function(CommonRequest) updates) => super.copyWith((message) => updates(message as CommonRequest)) as CommonRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CommonRequest create() => CommonRequest._();
+  CommonRequest createEmptyInstance() => create();
+  static $pb.PbList<CommonRequest> createRepeated() => $pb.PbList<CommonRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CommonRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommonRequest>(create);
+  static CommonRequest? _defaultInstance;
+
+  @$pb.TagNumber(2)
+  $core.int get accountId => $_getIZ(0);
+  @$pb.TagNumber(2)
+  set accountId($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccountId() => $_has(0);
+  @$pb.TagNumber(2)
+  void clearAccountId() => clearField(2);
 }
 
 class HasSessionRequest extends $pb.GeneratedMessage {

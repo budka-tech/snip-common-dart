@@ -21,21 +21,21 @@ import 'gsm.pbjson.dart';
 export 'gsm.pb.dart';
 
 abstract class GsmServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.GetSmsResponse> getSms($pb.ServerContext ctx, $0.GetSmsRequest request);
-  $async.Future<$0.GetFlashCallResponse> getFlashCall($pb.ServerContext ctx, $0.GetFlashCallRequest request);
+  $async.Future<$0.CommonResponse> sendSms($pb.ServerContext ctx, $0.SendSmsRequest request);
+  $async.Future<$0.CommonResponse> flashCall($pb.ServerContext ctx, $0.FlashCallRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'GetSms': return $0.GetSmsRequest();
-      case 'GetFlashCall': return $0.GetFlashCallRequest();
+      case 'SendSms': return $0.SendSmsRequest();
+      case 'FlashCall': return $0.FlashCallRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'GetSms': return this.getSms(ctx, request as $0.GetSmsRequest);
-      case 'GetFlashCall': return this.getFlashCall(ctx, request as $0.GetFlashCallRequest);
+      case 'SendSms': return this.sendSms(ctx, request as $0.SendSmsRequest);
+      case 'FlashCall': return this.flashCall(ctx, request as $0.FlashCallRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

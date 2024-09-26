@@ -15,18 +15,6 @@ import 'dart:typed_data' as $typed_data;
 
 import '../google/protobuf/timestamp.pbjson.dart' as $3;
 
-@$core.Deprecated('Use commonRequestDescriptor instead')
-const CommonRequest$json = {
-  '1': 'CommonRequest',
-  '2': [
-    {'1': 'accountId', '3': 2, '4': 1, '5': 13, '10': 'accountId'},
-  ],
-};
-
-/// Descriptor for `CommonRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commonRequestDescriptor = $convert.base64Decode(
-    'Cg1Db21tb25SZXF1ZXN0EhwKCWFjY291bnRJZBgCIAEoDVIJYWNjb3VudElk');
-
 @$core.Deprecated('Use commonResponseDescriptor instead')
 const CommonResponse$json = {
   '1': 'CommonResponse',
@@ -40,6 +28,18 @@ const CommonResponse$json = {
 final $typed_data.Uint8List commonResponseDescriptor = $convert.base64Decode(
     'Cg5Db21tb25SZXNwb25zZRIWCgZzdGF0dXMYASABKAhSBnN0YXR1cxISCgRjb2RlGAIgASgNUg'
     'Rjb2Rl');
+
+@$core.Deprecated('Use commonRequestDescriptor instead')
+const CommonRequest$json = {
+  '1': 'CommonRequest',
+  '2': [
+    {'1': 'accountId', '3': 2, '4': 1, '5': 13, '10': 'accountId'},
+  ],
+};
+
+/// Descriptor for `CommonRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commonRequestDescriptor = $convert.base64Decode(
+    'Cg1Db21tb25SZXF1ZXN0EhwKCWFjY291bnRJZBgCIAEoDVIJYWNjb3VudElk');
 
 @$core.Deprecated('Use hasSessionRequestDescriptor instead')
 const HasSessionRequest$json = {

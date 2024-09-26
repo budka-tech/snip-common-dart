@@ -13,75 +13,64 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use getSmsRequestDescriptor instead')
-const GetSmsRequest$json = {
-  '1': 'GetSmsRequest',
+@$core.Deprecated('Use commonResponseDescriptor instead')
+const CommonResponse$json = {
+  '1': 'CommonResponse',
   '2': [
-    {'1': 'userId', '3': 1, '4': 1, '5': 5, '10': 'userId'},
+    {'1': 'status', '3': 1, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'code', '3': 2, '4': 1, '5': 13, '10': 'code'},
+  ],
+};
+
+/// Descriptor for `CommonResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commonResponseDescriptor = $convert.base64Decode(
+    'Cg5Db21tb25SZXNwb25zZRIWCgZzdGF0dXMYASABKAhSBnN0YXR1cxISCgRjb2RlGAIgASgNUg'
+    'Rjb2Rl');
+
+@$core.Deprecated('Use sendSmsRequestDescriptor instead')
+const SendSmsRequest$json = {
+  '1': 'SendSmsRequest',
+  '2': [
+    {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
     {'1': 'phone', '3': 2, '4': 1, '5': 9, '10': 'phone'},
   ],
 };
 
-/// Descriptor for `GetSmsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getSmsRequestDescriptor = $convert.base64Decode(
-    'Cg1HZXRTbXNSZXF1ZXN0EhYKBnVzZXJJZBgBIAEoBVIGdXNlcklkEhQKBXBob25lGAIgASgJUg'
-    'VwaG9uZQ==');
+/// Descriptor for `SendSmsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendSmsRequestDescriptor = $convert.base64Decode(
+    'Cg5TZW5kU21zUmVxdWVzdBIYCgdtZXNzYWdlGAEgASgJUgdtZXNzYWdlEhQKBXBob25lGAIgAS'
+    'gJUgVwaG9uZQ==');
 
-@$core.Deprecated('Use getSmsResponseDescriptor instead')
-const GetSmsResponse$json = {
-  '1': 'GetSmsResponse',
-  '2': [
-    {'1': 'sms', '3': 1, '4': 1, '5': 9, '10': 'sms'},
-  ],
-};
-
-/// Descriptor for `GetSmsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getSmsResponseDescriptor = $convert.base64Decode(
-    'Cg5HZXRTbXNSZXNwb25zZRIQCgNzbXMYASABKAlSA3Ntcw==');
-
-@$core.Deprecated('Use getFlashCallRequestDescriptor instead')
-const GetFlashCallRequest$json = {
-  '1': 'GetFlashCallRequest',
+@$core.Deprecated('Use flashCallRequestDescriptor instead')
+const FlashCallRequest$json = {
+  '1': 'FlashCallRequest',
   '2': [
     {'1': 'phone', '3': 1, '4': 1, '5': 9, '10': 'phone'},
   ],
 };
 
-/// Descriptor for `GetFlashCallRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getFlashCallRequestDescriptor = $convert.base64Decode(
-    'ChNHZXRGbGFzaENhbGxSZXF1ZXN0EhQKBXBob25lGAEgASgJUgVwaG9uZQ==');
-
-@$core.Deprecated('Use getFlashCallResponseDescriptor instead')
-const GetFlashCallResponse$json = {
-  '1': 'GetFlashCallResponse',
-  '2': [
-    {'1': 'status', '3': 1, '4': 1, '5': 8, '10': 'status'},
-  ],
-};
-
-/// Descriptor for `GetFlashCallResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getFlashCallResponseDescriptor = $convert.base64Decode(
-    'ChRHZXRGbGFzaENhbGxSZXNwb25zZRIWCgZzdGF0dXMYASABKAhSBnN0YXR1cw==');
+/// Descriptor for `FlashCallRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List flashCallRequestDescriptor = $convert.base64Decode(
+    'ChBGbGFzaENhbGxSZXF1ZXN0EhQKBXBob25lGAEgASgJUgVwaG9uZQ==');
 
 const $core.Map<$core.String, $core.dynamic> GsmServiceBase$json = {
   '1': 'Gsm',
   '2': [
-    {'1': 'GetSms', '2': '.gsm.GetSmsRequest', '3': '.gsm.GetSmsResponse'},
-    {'1': 'GetFlashCall', '2': '.gsm.GetFlashCallRequest', '3': '.gsm.GetFlashCallResponse'},
+    {'1': 'SendSms', '2': '.gsm.SendSmsRequest', '3': '.gsm.CommonResponse'},
+    {'1': 'FlashCall', '2': '.gsm.FlashCallRequest', '3': '.gsm.CommonResponse'},
   ],
 };
 
 @$core.Deprecated('Use gsmServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> GsmServiceBase$messageJson = {
-  '.gsm.GetSmsRequest': GetSmsRequest$json,
-  '.gsm.GetSmsResponse': GetSmsResponse$json,
-  '.gsm.GetFlashCallRequest': GetFlashCallRequest$json,
-  '.gsm.GetFlashCallResponse': GetFlashCallResponse$json,
+  '.gsm.SendSmsRequest': SendSmsRequest$json,
+  '.gsm.CommonResponse': CommonResponse$json,
+  '.gsm.FlashCallRequest': FlashCallRequest$json,
 };
 
 /// Descriptor for `Gsm`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List gsmServiceDescriptor = $convert.base64Decode(
-    'CgNHc20SMQoGR2V0U21zEhIuZ3NtLkdldFNtc1JlcXVlc3QaEy5nc20uR2V0U21zUmVzcG9uc2'
-    'USQwoMR2V0Rmxhc2hDYWxsEhguZ3NtLkdldEZsYXNoQ2FsbFJlcXVlc3QaGS5nc20uR2V0Rmxh'
-    'c2hDYWxsUmVzcG9uc2U=');
+    'CgNHc20SMwoHU2VuZFNtcxITLmdzbS5TZW5kU21zUmVxdWVzdBoTLmdzbS5Db21tb25SZXNwb2'
+    '5zZRI3CglGbGFzaENhbGwSFS5nc20uRmxhc2hDYWxsUmVxdWVzdBoTLmdzbS5Db21tb25SZXNw'
+    'b25zZQ==');
 
