@@ -48,6 +48,7 @@ const IdentificationResponse$json = {
     {'1': 'type', '3': 2, '4': 1, '5': 13, '10': 'type'},
     {'1': 'methods', '3': 3, '4': 3, '5': 13, '10': 'methods'},
     {'1': 'data', '3': 4, '4': 1, '5': 9, '10': 'data'},
+    {'1': 'endedAt', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'endedAt'},
   ],
 };
 
@@ -55,7 +56,8 @@ const IdentificationResponse$json = {
 final $typed_data.Uint8List identificationResponseDescriptor = $convert.base64Decode(
     'ChZJZGVudGlmaWNhdGlvblJlc3BvbnNlEhYKBnN0YXR1cxgBIAEoDVIGc3RhdHVzEhIKBHR5cG'
     'UYAiABKA1SBHR5cGUSGAoHbWV0aG9kcxgDIAMoDVIHbWV0aG9kcxISCgRkYXRhGAQgASgJUgRk'
-    'YXRh');
+    'YXRhEjQKB2VuZGVkQXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgdlbmRlZE'
+    'F0');
 
 @$core.Deprecated('Use checkCodeRequestDescriptor instead')
 const CheckCodeRequest$json = {
@@ -346,13 +348,13 @@ const $core.Map<$core.String, $core.dynamic> UsersServiceBase$json = {
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> UsersServiceBase$messageJson = {
   '.users.IdentificationRequest': IdentificationRequest$json,
   '.users.IdentificationResponse': IdentificationResponse$json,
+  '.google.protobuf.Timestamp': $2.Timestamp$json,
   '.users.CheckCodeRequest': CheckCodeRequest$json,
   '.common.Response': $0.Response$json,
   '.users.LoginRequest': LoginRequest$json,
   '.users.LoginResponse': LoginResponse$json,
   '.users.Account': Account$json,
   '.users.AccountPhone': AccountPhone$json,
-  '.google.protobuf.Timestamp': $2.Timestamp$json,
   '.users.AccountEmail': AccountEmail$json,
   '.users.AccountRole': AccountRole$json,
   '.users.RegisterRequest': RegisterRequest$json,

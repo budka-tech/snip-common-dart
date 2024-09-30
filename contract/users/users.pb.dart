@@ -124,6 +124,7 @@ class IdentificationResponse extends $pb.GeneratedMessage {
     $core.int? type,
     $core.Iterable<$core.int>? methods,
     $core.String? data,
+    $2.Timestamp? endedAt,
   }) {
     final $result = create();
     if (status != null) {
@@ -138,6 +139,9 @@ class IdentificationResponse extends $pb.GeneratedMessage {
     if (data != null) {
       $result.data = data;
     }
+    if (endedAt != null) {
+      $result.endedAt = endedAt;
+    }
     return $result;
   }
   IdentificationResponse._() : super();
@@ -149,6 +153,7 @@ class IdentificationResponse extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OU3)
     ..p<$core.int>(3, _omitFieldNames ? '' : 'methods', $pb.PbFieldType.KU3)
     ..aOS(4, _omitFieldNames ? '' : 'data')
+    ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'endedAt', protoName: 'endedAt', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -202,6 +207,17 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   $core.bool hasData() => $_has(3);
   @$pb.TagNumber(4)
   void clearData() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $2.Timestamp get endedAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set endedAt($2.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEndedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEndedAt() => clearField(5);
+  @$pb.TagNumber(5)
+  $2.Timestamp ensureEndedAt() => $_ensure(4);
 }
 
 class CheckCodeRequest extends $pb.GeneratedMessage {
