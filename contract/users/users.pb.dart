@@ -123,11 +123,15 @@ class IdentificationRequest extends $pb.GeneratedMessage {
 
 class IdentificationResponse extends $pb.GeneratedMessage {
   factory IdentificationResponse({
+    $core.int? status,
     IdentificationType? type,
     $core.Iterable<IdentificationType>? otherMethods,
     $core.String? data,
   }) {
     final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
     if (type != null) {
       $result.type = type;
     }
@@ -144,9 +148,10 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   factory IdentificationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
-    ..e<IdentificationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: IdentificationType.FlashCall, valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values)
-    ..pc<IdentificationType>(2, _omitFieldNames ? '' : 'otherMethods', $pb.PbFieldType.KE, protoName: 'otherMethods', valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values, defaultEnumValue: IdentificationType.FlashCall)
-    ..aOS(3, _omitFieldNames ? '' : 'data')
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
+    ..e<IdentificationType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: IdentificationType.FlashCall, valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values)
+    ..pc<IdentificationType>(3, _omitFieldNames ? '' : 'otherMethods', $pb.PbFieldType.KE, protoName: 'otherMethods', valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values, defaultEnumValue: IdentificationType.FlashCall)
+    ..aOS(4, _omitFieldNames ? '' : 'data')
     ..hasRequiredFields = false
   ;
 
@@ -172,25 +177,34 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   static IdentificationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  IdentificationType get type => $_getN(0);
+  $core.int get status => $_getIZ(0);
   @$pb.TagNumber(1)
-  set type(IdentificationType v) { setField(1, v); }
+  set status($core.int v) { $_setUnsignedInt32(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasType() => $_has(0);
+  $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearType() => clearField(1);
+  void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<IdentificationType> get otherMethods => $_getList(1);
+  IdentificationType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(IdentificationType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get data => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set data($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasData() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearData() => clearField(3);
+  $core.List<IdentificationType> get otherMethods => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get data => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set data($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasData() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearData() => clearField(4);
 }
 
 class CheckCodeRequest extends $pb.GeneratedMessage {

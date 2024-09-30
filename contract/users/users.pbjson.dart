@@ -58,17 +58,19 @@ final $typed_data.Uint8List identificationRequestDescriptor = $convert.base64Dec
 const IdentificationResponse$json = {
   '1': 'IdentificationResponse',
   '2': [
-    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.users.IdentificationType', '10': 'type'},
-    {'1': 'otherMethods', '3': 2, '4': 3, '5': 14, '6': '.users.IdentificationType', '10': 'otherMethods'},
-    {'1': 'data', '3': 3, '4': 1, '5': 9, '10': 'data'},
+    {'1': 'status', '3': 1, '4': 1, '5': 13, '10': 'status'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.users.IdentificationType', '10': 'type'},
+    {'1': 'otherMethods', '3': 3, '4': 3, '5': 14, '6': '.users.IdentificationType', '10': 'otherMethods'},
+    {'1': 'data', '3': 4, '4': 1, '5': 9, '10': 'data'},
   ],
 };
 
 /// Descriptor for `IdentificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List identificationResponseDescriptor = $convert.base64Decode(
-    'ChZJZGVudGlmaWNhdGlvblJlc3BvbnNlEi0KBHR5cGUYASABKA4yGS51c2Vycy5JZGVudGlmaW'
-    'NhdGlvblR5cGVSBHR5cGUSPQoMb3RoZXJNZXRob2RzGAIgAygOMhkudXNlcnMuSWRlbnRpZmlj'
-    'YXRpb25UeXBlUgxvdGhlck1ldGhvZHMSEgoEZGF0YRgDIAEoCVIEZGF0YQ==');
+    'ChZJZGVudGlmaWNhdGlvblJlc3BvbnNlEhYKBnN0YXR1cxgBIAEoDVIGc3RhdHVzEi0KBHR5cG'
+    'UYAiABKA4yGS51c2Vycy5JZGVudGlmaWNhdGlvblR5cGVSBHR5cGUSPQoMb3RoZXJNZXRob2Rz'
+    'GAMgAygOMhkudXNlcnMuSWRlbnRpZmljYXRpb25UeXBlUgxvdGhlck1ldGhvZHMSEgoEZGF0YR'
+    'gEIAEoCVIEZGF0YQ==');
 
 @$core.Deprecated('Use checkCodeRequestDescriptor instead')
 const CheckCodeRequest$json = {
