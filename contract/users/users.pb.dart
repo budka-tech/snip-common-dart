@@ -17,9 +17,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../common/common.pb.dart' as $0;
 import '../google/protobuf/timestamp.pb.dart' as $2;
-import 'users.pbenum.dart';
-
-export 'users.pbenum.dart';
 
 class CommonRequest extends $pb.GeneratedMessage {
   factory CommonRequest({
@@ -124,8 +121,8 @@ class IdentificationRequest extends $pb.GeneratedMessage {
 class IdentificationResponse extends $pb.GeneratedMessage {
   factory IdentificationResponse({
     $core.int? status,
-    IdentificationType? type,
-    $core.Iterable<IdentificationType>? otherMethods,
+    $core.int? type,
+    $core.Iterable<$core.int>? otherMethods,
     $core.String? data,
   }) {
     final $result = create();
@@ -149,8 +146,8 @@ class IdentificationResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
-    ..e<IdentificationType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: IdentificationType.FlashCall, valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values)
-    ..pc<IdentificationType>(3, _omitFieldNames ? '' : 'otherMethods', $pb.PbFieldType.KE, protoName: 'otherMethods', valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values, defaultEnumValue: IdentificationType.FlashCall)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OU3)
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'otherMethods', $pb.PbFieldType.KU3, protoName: 'otherMethods')
     ..aOS(4, _omitFieldNames ? '' : 'data')
     ..hasRequiredFields = false
   ;
@@ -186,16 +183,16 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  IdentificationType get type => $_getN(1);
+  $core.int get type => $_getIZ(1);
   @$pb.TagNumber(2)
-  set type(IdentificationType v) { setField(2, v); }
+  set type($core.int v) { $_setUnsignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<IdentificationType> get otherMethods => $_getList(2);
+  $core.List<$core.int> get otherMethods => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get data => $_getSZ(3);

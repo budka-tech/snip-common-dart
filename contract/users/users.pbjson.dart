@@ -16,20 +16,6 @@ import 'dart:typed_data' as $typed_data;
 import '../common/common.pbjson.dart' as $0;
 import '../google/protobuf/timestamp.pbjson.dart' as $2;
 
-@$core.Deprecated('Use identificationTypeDescriptor instead')
-const IdentificationType$json = {
-  '1': 'IdentificationType',
-  '2': [
-    {'1': 'FlashCall', '2': 0},
-    {'1': 'SMS', '2': 1},
-    {'1': 'Push', '2': 2},
-  ],
-};
-
-/// Descriptor for `IdentificationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List identificationTypeDescriptor = $convert.base64Decode(
-    'ChJJZGVudGlmaWNhdGlvblR5cGUSDQoJRmxhc2hDYWxsEAASBwoDU01TEAESCAoEUHVzaBAC');
-
 @$core.Deprecated('Use commonRequestDescriptor instead')
 const CommonRequest$json = {
   '1': 'CommonRequest',
@@ -59,18 +45,17 @@ const IdentificationResponse$json = {
   '1': 'IdentificationResponse',
   '2': [
     {'1': 'status', '3': 1, '4': 1, '5': 13, '10': 'status'},
-    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.users.IdentificationType', '10': 'type'},
-    {'1': 'otherMethods', '3': 3, '4': 3, '5': 14, '6': '.users.IdentificationType', '10': 'otherMethods'},
+    {'1': 'type', '3': 2, '4': 1, '5': 13, '10': 'type'},
+    {'1': 'otherMethods', '3': 3, '4': 3, '5': 13, '10': 'otherMethods'},
     {'1': 'data', '3': 4, '4': 1, '5': 9, '10': 'data'},
   ],
 };
 
 /// Descriptor for `IdentificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List identificationResponseDescriptor = $convert.base64Decode(
-    'ChZJZGVudGlmaWNhdGlvblJlc3BvbnNlEhYKBnN0YXR1cxgBIAEoDVIGc3RhdHVzEi0KBHR5cG'
-    'UYAiABKA4yGS51c2Vycy5JZGVudGlmaWNhdGlvblR5cGVSBHR5cGUSPQoMb3RoZXJNZXRob2Rz'
-    'GAMgAygOMhkudXNlcnMuSWRlbnRpZmljYXRpb25UeXBlUgxvdGhlck1ldGhvZHMSEgoEZGF0YR'
-    'gEIAEoCVIEZGF0YQ==');
+    'ChZJZGVudGlmaWNhdGlvblJlc3BvbnNlEhYKBnN0YXR1cxgBIAEoDVIGc3RhdHVzEhIKBHR5cG'
+    'UYAiABKA1SBHR5cGUSIgoMb3RoZXJNZXRob2RzGAMgAygNUgxvdGhlck1ldGhvZHMSEgoEZGF0'
+    'YRgEIAEoCVIEZGF0YQ==');
 
 @$core.Deprecated('Use checkCodeRequestDescriptor instead')
 const CheckCodeRequest$json = {
