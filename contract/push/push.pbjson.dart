@@ -31,14 +31,14 @@ final $typed_data.Uint8List commonResponseDescriptor = $convert.base64Decode(
 const NowRequest$json = {
   '1': 'NowRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'id', '3': 1, '4': 3, '5': 9, '10': 'id'},
     {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
   ],
 };
 
 /// Descriptor for `NowRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List nowRequestDescriptor = $convert.base64Decode(
-    'CgpOb3dSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBISCgR0ZXh0GAIgASgJUgR0ZXh0');
+    'CgpOb3dSZXF1ZXN0Eg4KAmlkGAEgAygJUgJpZBISCgR0ZXh0GAIgASgJUgR0ZXh0');
 
 @$core.Deprecated('Use scheduleRequestDescriptor instead')
 const ScheduleRequest$json = {

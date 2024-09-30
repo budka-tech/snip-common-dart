@@ -46,7 +46,7 @@ const IdentificationResponse$json = {
   '2': [
     {'1': 'status', '3': 1, '4': 1, '5': 13, '10': 'status'},
     {'1': 'type', '3': 2, '4': 1, '5': 13, '10': 'type'},
-    {'1': 'otherMethods', '3': 3, '4': 3, '5': 13, '10': 'otherMethods'},
+    {'1': 'methods', '3': 3, '4': 3, '5': 13, '10': 'methods'},
     {'1': 'data', '3': 4, '4': 1, '5': 9, '10': 'data'},
   ],
 };
@@ -54,8 +54,8 @@ const IdentificationResponse$json = {
 /// Descriptor for `IdentificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List identificationResponseDescriptor = $convert.base64Decode(
     'ChZJZGVudGlmaWNhdGlvblJlc3BvbnNlEhYKBnN0YXR1cxgBIAEoDVIGc3RhdHVzEhIKBHR5cG'
-    'UYAiABKA1SBHR5cGUSIgoMb3RoZXJNZXRob2RzGAMgAygNUgxvdGhlck1ldGhvZHMSEgoEZGF0'
-    'YRgEIAEoCVIEZGF0YQ==');
+    'UYAiABKA1SBHR5cGUSGAoHbWV0aG9kcxgDIAMoDVIHbWV0aG9kcxISCgRkYXRhGAQgASgJUgRk'
+    'YXRh');
 
 @$core.Deprecated('Use checkCodeRequestDescriptor instead')
 const CheckCodeRequest$json = {

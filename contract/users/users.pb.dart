@@ -122,7 +122,7 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   factory IdentificationResponse({
     $core.int? status,
     $core.int? type,
-    $core.Iterable<$core.int>? otherMethods,
+    $core.Iterable<$core.int>? methods,
     $core.String? data,
   }) {
     final $result = create();
@@ -132,8 +132,8 @@ class IdentificationResponse extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
-    if (otherMethods != null) {
-      $result.otherMethods.addAll(otherMethods);
+    if (methods != null) {
+      $result.methods.addAll(methods);
     }
     if (data != null) {
       $result.data = data;
@@ -147,7 +147,7 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
     ..a<$core.int>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OU3)
-    ..p<$core.int>(3, _omitFieldNames ? '' : 'otherMethods', $pb.PbFieldType.KU3, protoName: 'otherMethods')
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'methods', $pb.PbFieldType.KU3)
     ..aOS(4, _omitFieldNames ? '' : 'data')
     ..hasRequiredFields = false
   ;
@@ -192,7 +192,7 @@ class IdentificationResponse extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.int> get otherMethods => $_getList(2);
+  $core.List<$core.int> get methods => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get data => $_getSZ(3);

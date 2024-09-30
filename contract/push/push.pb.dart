@@ -68,12 +68,12 @@ class CommonResponse extends $pb.GeneratedMessage {
 
 class NowRequest extends $pb.GeneratedMessage {
   factory NowRequest({
-    $core.String? id,
+    $core.Iterable<$core.String>? id,
     $core.String? text,
   }) {
     final $result = create();
     if (id != null) {
-      $result.id = id;
+      $result.id.addAll(id);
     }
     if (text != null) {
       $result.text = text;
@@ -85,7 +85,7 @@ class NowRequest extends $pb.GeneratedMessage {
   factory NowRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NowRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..pPS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'text')
     ..hasRequiredFields = false
   ;
@@ -112,13 +112,7 @@ class NowRequest extends $pb.GeneratedMessage {
   static NowRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  $core.List<$core.String> get id => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get text => $_getSZ(1);
