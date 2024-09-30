@@ -15,51 +15,51 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'users.pb.dart' as $4;
+import 'users.pb.dart' as $5;
 import 'users.pbjson.dart';
 
 export 'users.pb.dart';
 
 abstract class UsersServiceBase extends $pb.GeneratedService {
-  $async.Future<$4.CommonResponse> register($pb.ServerContext ctx, $4.RegisterRequest request);
-  $async.Future<$4.LoginResponse> login($pb.ServerContext ctx, $4.LoginRequest request);
-  $async.Future<$4.CommonResponse> hasSession($pb.ServerContext ctx, $4.HasSessionRequest request);
-  $async.Future<$4.Account> getAccount($pb.ServerContext ctx, $4.CommonRequest request);
-  $async.Future<$4.CommonResponse> updateAccountData($pb.ServerContext ctx, $4.UpdateAccountDataRequest request);
-  $async.Future<$4.CommonResponse> updatePassword($pb.ServerContext ctx, $4.UpdatePasswordRequest request);
-  $async.Future<$4.CommonResponse> updatePhoto($pb.ServerContext ctx, $4.UpdatePhotoRequest request);
-  $async.Future<$4.CommonResponse> addPhone($pb.ServerContext ctx, $4.AddPhoneRequest request);
-  $async.Future<$4.CommonResponse> updatePhone($pb.ServerContext ctx, $4.UpdatePhotoRequest request);
-  $async.Future<$4.CommonResponse> removePhone($pb.ServerContext ctx, $4.RemovePhoneRequest request);
+  $async.Future<$5.CommonResponse> register($pb.ServerContext ctx, $5.RegisterRequest request);
+  $async.Future<$5.LoginResponse> login($pb.ServerContext ctx, $5.LoginRequest request);
+  $async.Future<$5.CommonResponse> hasSession($pb.ServerContext ctx, $5.HasSessionRequest request);
+  $async.Future<$5.Account> getAccount($pb.ServerContext ctx, $5.CommonRequest request);
+  $async.Future<$5.CommonResponse> updateAccountData($pb.ServerContext ctx, $5.UpdateAccountDataRequest request);
+  $async.Future<$5.CommonResponse> updatePassword($pb.ServerContext ctx, $5.UpdatePasswordRequest request);
+  $async.Future<$5.CommonResponse> updatePhoto($pb.ServerContext ctx, $5.UpdatePhotoRequest request);
+  $async.Future<$5.CommonResponse> addPhone($pb.ServerContext ctx, $5.AddPhoneRequest request);
+  $async.Future<$5.CommonResponse> updatePhone($pb.ServerContext ctx, $5.UpdatePhotoRequest request);
+  $async.Future<$5.CommonResponse> removePhone($pb.ServerContext ctx, $5.RemovePhoneRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'Register': return $4.RegisterRequest();
-      case 'Login': return $4.LoginRequest();
-      case 'HasSession': return $4.HasSessionRequest();
-      case 'GetAccount': return $4.CommonRequest();
-      case 'UpdateAccountData': return $4.UpdateAccountDataRequest();
-      case 'UpdatePassword': return $4.UpdatePasswordRequest();
-      case 'UpdatePhoto': return $4.UpdatePhotoRequest();
-      case 'AddPhone': return $4.AddPhoneRequest();
-      case 'UpdatePhone': return $4.UpdatePhotoRequest();
-      case 'RemovePhone': return $4.RemovePhoneRequest();
+      case 'Register': return $5.RegisterRequest();
+      case 'Login': return $5.LoginRequest();
+      case 'HasSession': return $5.HasSessionRequest();
+      case 'GetAccount': return $5.CommonRequest();
+      case 'UpdateAccountData': return $5.UpdateAccountDataRequest();
+      case 'UpdatePassword': return $5.UpdatePasswordRequest();
+      case 'UpdatePhoto': return $5.UpdatePhotoRequest();
+      case 'AddPhone': return $5.AddPhoneRequest();
+      case 'UpdatePhone': return $5.UpdatePhotoRequest();
+      case 'RemovePhone': return $5.RemovePhoneRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'Register': return this.register(ctx, request as $4.RegisterRequest);
-      case 'Login': return this.login(ctx, request as $4.LoginRequest);
-      case 'HasSession': return this.hasSession(ctx, request as $4.HasSessionRequest);
-      case 'GetAccount': return this.getAccount(ctx, request as $4.CommonRequest);
-      case 'UpdateAccountData': return this.updateAccountData(ctx, request as $4.UpdateAccountDataRequest);
-      case 'UpdatePassword': return this.updatePassword(ctx, request as $4.UpdatePasswordRequest);
-      case 'UpdatePhoto': return this.updatePhoto(ctx, request as $4.UpdatePhotoRequest);
-      case 'AddPhone': return this.addPhone(ctx, request as $4.AddPhoneRequest);
-      case 'UpdatePhone': return this.updatePhone(ctx, request as $4.UpdatePhotoRequest);
-      case 'RemovePhone': return this.removePhone(ctx, request as $4.RemovePhoneRequest);
+      case 'Register': return this.register(ctx, request as $5.RegisterRequest);
+      case 'Login': return this.login(ctx, request as $5.LoginRequest);
+      case 'HasSession': return this.hasSession(ctx, request as $5.HasSessionRequest);
+      case 'GetAccount': return this.getAccount(ctx, request as $5.CommonRequest);
+      case 'UpdateAccountData': return this.updateAccountData(ctx, request as $5.UpdateAccountDataRequest);
+      case 'UpdatePassword': return this.updatePassword(ctx, request as $5.UpdatePasswordRequest);
+      case 'UpdatePhoto': return this.updatePhoto(ctx, request as $5.UpdatePhotoRequest);
+      case 'AddPhone': return this.addPhone(ctx, request as $5.AddPhoneRequest);
+      case 'UpdatePhone': return this.updatePhone(ctx, request as $5.UpdatePhotoRequest);
+      case 'RemovePhone': return this.removePhone(ctx, request as $5.RemovePhoneRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

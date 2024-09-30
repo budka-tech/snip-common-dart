@@ -13,7 +13,7 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-import '../google/protobuf/timestamp.pbjson.dart' as $3;
+import '../google/protobuf/timestamp.pbjson.dart' as $4;
 
 @$core.Deprecated('Use commonResponseDescriptor instead')
 const CommonResponse$json = {
@@ -303,7 +303,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> UsersServi
   '.users.LoginResponse': LoginResponse$json,
   '.users.Account': Account$json,
   '.users.AccountPhone': AccountPhone$json,
-  '.google.protobuf.Timestamp': $3.Timestamp$json,
+  '.google.protobuf.Timestamp': $4.Timestamp$json,
   '.users.AccountEmail': AccountEmail$json,
   '.users.AccountRole': AccountRole$json,
   '.users.HasSessionRequest': HasSessionRequest$json,

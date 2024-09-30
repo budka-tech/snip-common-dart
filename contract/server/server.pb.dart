@@ -15,6 +15,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/any.pb.dart' as $1;
+import '../google/protobuf/empty.pb.dart' as $2;
 import 'server.pbenum.dart';
 
 export 'server.pbenum.dart';
@@ -47,7 +48,7 @@ class Meta extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Meta', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..e<MessageType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: MessageType.Call, valueOf: MessageType.valueOf, enumValues: MessageType.values)
-    ..e<Domain>(2, _omitFieldNames ? '' : 'domain', $pb.PbFieldType.OE, defaultOrMaker: Domain.Users, valueOf: Domain.valueOf, enumValues: Domain.values)
+    ..e<Domain>(2, _omitFieldNames ? '' : 'domain', $pb.PbFieldType.OE, defaultOrMaker: Domain.Auth, valueOf: Domain.valueOf, enumValues: Domain.values)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
@@ -245,6 +246,140 @@ class CallResponse extends $pb.GeneratedMessage {
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
   $1.Any ensureData() => $_ensure(1);
+}
+
+class CallSuccessResponse extends $pb.GeneratedMessage {
+  factory CallSuccessResponse({
+    Meta? meta,
+    $1.Any? data,
+  }) {
+    final $result = create();
+    if (meta != null) {
+      $result.meta = meta;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
+  CallSuccessResponse._() : super();
+  factory CallSuccessResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CallSuccessResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallSuccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
+    ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
+    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CallSuccessResponse clone() => CallSuccessResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CallSuccessResponse copyWith(void Function(CallSuccessResponse) updates) => super.copyWith((message) => updates(message as CallSuccessResponse)) as CallSuccessResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CallSuccessResponse create() => CallSuccessResponse._();
+  CallSuccessResponse createEmptyInstance() => create();
+  static $pb.PbList<CallSuccessResponse> createRepeated() => $pb.PbList<CallSuccessResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CallSuccessResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CallSuccessResponse>(create);
+  static CallSuccessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Meta get meta => $_getN(0);
+  @$pb.TagNumber(1)
+  set meta(Meta v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMeta() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeta() => clearField(1);
+  @$pb.TagNumber(1)
+  Meta ensureMeta() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $1.Any get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($1.Any v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Any ensureData() => $_ensure(1);
+}
+
+class CallErrorResponse extends $pb.GeneratedMessage {
+  factory CallErrorResponse({
+    Meta? meta,
+    $core.int? code,
+  }) {
+    final $result = create();
+    if (meta != null) {
+      $result.meta = meta;
+    }
+    if (code != null) {
+      $result.code = code;
+    }
+    return $result;
+  }
+  CallErrorResponse._() : super();
+  factory CallErrorResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CallErrorResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallErrorResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
+    ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CallErrorResponse clone() => CallErrorResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CallErrorResponse copyWith(void Function(CallErrorResponse) updates) => super.copyWith((message) => updates(message as CallErrorResponse)) as CallErrorResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CallErrorResponse create() => CallErrorResponse._();
+  CallErrorResponse createEmptyInstance() => create();
+  static $pb.PbList<CallErrorResponse> createRepeated() => $pb.PbList<CallErrorResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CallErrorResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CallErrorResponse>(create);
+  static CallErrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Meta get meta => $_getN(0);
+  @$pb.TagNumber(1)
+  set meta(Meta v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMeta() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeta() => clearField(1);
+  @$pb.TagNumber(1)
+  Meta ensureMeta() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get code => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set code($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => clearField(2);
 }
 
 class SubscribeRequest extends $pb.GeneratedMessage {
@@ -485,18 +620,150 @@ class SubscribeResponse extends $pb.GeneratedMessage {
   SubscribeData ensureData() => $_ensure(1);
 }
 
+class SubscribeErrorResponse extends $pb.GeneratedMessage {
+  factory SubscribeErrorResponse({
+    Meta? meta,
+    $core.int? code,
+  }) {
+    final $result = create();
+    if (meta != null) {
+      $result.meta = meta;
+    }
+    if (code != null) {
+      $result.code = code;
+    }
+    return $result;
+  }
+  SubscribeErrorResponse._() : super();
+  factory SubscribeErrorResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SubscribeErrorResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubscribeErrorResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
+    ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SubscribeErrorResponse clone() => SubscribeErrorResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SubscribeErrorResponse copyWith(void Function(SubscribeErrorResponse) updates) => super.copyWith((message) => updates(message as SubscribeErrorResponse)) as SubscribeErrorResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubscribeErrorResponse create() => SubscribeErrorResponse._();
+  SubscribeErrorResponse createEmptyInstance() => create();
+  static $pb.PbList<SubscribeErrorResponse> createRepeated() => $pb.PbList<SubscribeErrorResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SubscribeErrorResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubscribeErrorResponse>(create);
+  static SubscribeErrorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Meta get meta => $_getN(0);
+  @$pb.TagNumber(1)
+  set meta(Meta v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMeta() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeta() => clearField(1);
+  @$pb.TagNumber(1)
+  Meta ensureMeta() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get code => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set code($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => clearField(2);
+}
+
+class EventMessage extends $pb.GeneratedMessage {
+  factory EventMessage({
+    Meta? meta,
+    $core.int? code,
+  }) {
+    final $result = create();
+    if (meta != null) {
+      $result.meta = meta;
+    }
+    if (code != null) {
+      $result.code = code;
+    }
+    return $result;
+  }
+  EventMessage._() : super();
+  factory EventMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EventMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventMessage', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
+    ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EventMessage clone() => EventMessage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EventMessage copyWith(void Function(EventMessage) updates) => super.copyWith((message) => updates(message as EventMessage)) as EventMessage;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EventMessage create() => EventMessage._();
+  EventMessage createEmptyInstance() => create();
+  static $pb.PbList<EventMessage> createRepeated() => $pb.PbList<EventMessage>();
+  @$core.pragma('dart2js:noInline')
+  static EventMessage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventMessage>(create);
+  static EventMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Meta get meta => $_getN(0);
+  @$pb.TagNumber(1)
+  set meta(Meta v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMeta() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeta() => clearField(1);
+  @$pb.TagNumber(1)
+  Meta ensureMeta() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.int get code => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set code($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCode() => clearField(2);
+}
+
 class ServerApi {
   $pb.RpcClient _client;
   ServerApi(this._client);
 
-  $async.Future<CallResponse> call($pb.ClientContext? ctx, Request request) =>
-    _client.invoke<CallResponse>(ctx, 'Server', 'Call', request, CallResponse())
+  $async.Future<$2.Empty> call($pb.ClientContext? ctx, Request request) =>
+    _client.invoke<$2.Empty>(ctx, 'Server', 'Call', request, $2.Empty())
   ;
-  $async.Future<SubscribeResponse> subscribe($pb.ClientContext? ctx, Request request) =>
-    _client.invoke<SubscribeResponse>(ctx, 'Server', 'Subscribe', request, SubscribeResponse())
+  $async.Future<$2.Empty> subscribe($pb.ClientContext? ctx, Request request) =>
+    _client.invoke<$2.Empty>(ctx, 'Server', 'Subscribe', request, $2.Empty())
   ;
-  $async.Future<$1.Any> unSubscribe($pb.ClientContext? ctx, UnsubscribeRequest request) =>
-    _client.invoke<$1.Any>(ctx, 'Server', 'UnSubscribe', request, $1.Any())
+  $async.Future<$2.Empty> unSubscribe($pb.ClientContext? ctx, UnsubscribeRequest request) =>
+    _client.invoke<$2.Empty>(ctx, 'Server', 'UnSubscribe', request, $2.Empty())
   ;
 }
 

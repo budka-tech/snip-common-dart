@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
 import '../google/protobuf/any.pbjson.dart' as $1;
+import '../google/protobuf/empty.pbjson.dart' as $2;
 
 @$core.Deprecated('Use messageTypeDescriptor instead')
 const MessageType$json = {
@@ -39,13 +40,15 @@ final $typed_data.Uint8List messageTypeDescriptor = $convert.base64Decode(
 const Domain$json = {
   '1': 'Domain',
   '2': [
-    {'1': 'Users', '2': 0},
+    {'1': 'Auth', '2': 0},
+    {'1': 'Users', '2': 1},
+    {'1': 'Assist', '2': 2},
   ],
 };
 
 /// Descriptor for `Domain`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List domainDescriptor = $convert.base64Decode(
-    'CgZEb21haW4SCQoFVXNlcnMQAA==');
+    'CgZEb21haW4SCAoEQXV0aBAAEgkKBVVzZXJzEAESCgoGQXNzaXN0EAI=');
 
 @$core.Deprecated('Use subscribeActionDescriptor instead')
 const SubscribeAction$json = {
@@ -108,6 +111,34 @@ final $typed_data.Uint8List callResponseDescriptor = $convert.base64Decode(
     'CgxDYWxsUmVzcG9uc2USIAoEbWV0YRgBIAEoCzIMLnNlcnZlci5NZXRhUgRtZXRhEigKBGRhdG'
     'EYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UgRkYXRh');
 
+@$core.Deprecated('Use callSuccessResponseDescriptor instead')
+const CallSuccessResponse$json = {
+  '1': 'CallSuccessResponse',
+  '2': [
+    {'1': 'meta', '3': 1, '4': 1, '5': 11, '6': '.server.Meta', '10': 'meta'},
+    {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'data'},
+  ],
+};
+
+/// Descriptor for `CallSuccessResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List callSuccessResponseDescriptor = $convert.base64Decode(
+    'ChNDYWxsU3VjY2Vzc1Jlc3BvbnNlEiAKBG1ldGEYASABKAsyDC5zZXJ2ZXIuTWV0YVIEbWV0YR'
+    'IoCgRkYXRhGAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueVIEZGF0YQ==');
+
+@$core.Deprecated('Use callErrorResponseDescriptor instead')
+const CallErrorResponse$json = {
+  '1': 'CallErrorResponse',
+  '2': [
+    {'1': 'meta', '3': 1, '4': 1, '5': 11, '6': '.server.Meta', '10': 'meta'},
+    {'1': 'code', '3': 2, '4': 1, '5': 13, '10': 'code'},
+  ],
+};
+
+/// Descriptor for `CallErrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List callErrorResponseDescriptor = $convert.base64Decode(
+    'ChFDYWxsRXJyb3JSZXNwb25zZRIgCgRtZXRhGAEgASgLMgwuc2VydmVyLk1ldGFSBG1ldGESEg'
+    'oEY29kZRgCIAEoDVIEY29kZQ==');
+
 @$core.Deprecated('Use subscribeRequestDescriptor instead')
 const SubscribeRequest$json = {
   '1': 'SubscribeRequest',
@@ -160,12 +191,40 @@ final $typed_data.Uint8List subscribeResponseDescriptor = $convert.base64Decode(
     'ChFTdWJzY3JpYmVSZXNwb25zZRIgCgRtZXRhGAEgASgLMgwuc2VydmVyLk1ldGFSBG1ldGESKQ'
     'oEZGF0YRgCIAEoCzIVLnNlcnZlci5TdWJzY3JpYmVEYXRhUgRkYXRh');
 
+@$core.Deprecated('Use subscribeErrorResponseDescriptor instead')
+const SubscribeErrorResponse$json = {
+  '1': 'SubscribeErrorResponse',
+  '2': [
+    {'1': 'meta', '3': 1, '4': 1, '5': 11, '6': '.server.Meta', '10': 'meta'},
+    {'1': 'code', '3': 2, '4': 1, '5': 13, '10': 'code'},
+  ],
+};
+
+/// Descriptor for `SubscribeErrorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List subscribeErrorResponseDescriptor = $convert.base64Decode(
+    'ChZTdWJzY3JpYmVFcnJvclJlc3BvbnNlEiAKBG1ldGEYASABKAsyDC5zZXJ2ZXIuTWV0YVIEbW'
+    'V0YRISCgRjb2RlGAIgASgNUgRjb2Rl');
+
+@$core.Deprecated('Use eventMessageDescriptor instead')
+const EventMessage$json = {
+  '1': 'EventMessage',
+  '2': [
+    {'1': 'meta', '3': 1, '4': 1, '5': 11, '6': '.server.Meta', '10': 'meta'},
+    {'1': 'code', '3': 2, '4': 1, '5': 13, '10': 'code'},
+  ],
+};
+
+/// Descriptor for `EventMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventMessageDescriptor = $convert.base64Decode(
+    'CgxFdmVudE1lc3NhZ2USIAoEbWV0YRgBIAEoCzIMLnNlcnZlci5NZXRhUgRtZXRhEhIKBGNvZG'
+    'UYAiABKA1SBGNvZGU=');
+
 const $core.Map<$core.String, $core.dynamic> ServerServiceBase$json = {
   '1': 'Server',
   '2': [
-    {'1': 'Call', '2': '.server.Request', '3': '.server.CallResponse'},
-    {'1': 'Subscribe', '2': '.server.Request', '3': '.server.SubscribeResponse'},
-    {'1': 'UnSubscribe', '2': '.server.UnsubscribeRequest', '3': '.google.protobuf.Any'},
+    {'1': 'Call', '2': '.server.Request', '3': '.google.protobuf.Empty'},
+    {'1': 'Subscribe', '2': '.server.Request', '3': '.google.protobuf.Empty'},
+    {'1': 'UnSubscribe', '2': '.server.UnsubscribeRequest', '3': '.google.protobuf.Empty'},
   ],
 };
 
@@ -174,16 +233,14 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> ServerServ
   '.server.Request': Request$json,
   '.server.Meta': Meta$json,
   '.google.protobuf.Any': $1.Any$json,
-  '.server.CallResponse': CallResponse$json,
-  '.server.SubscribeResponse': SubscribeResponse$json,
-  '.server.SubscribeData': SubscribeData$json,
+  '.google.protobuf.Empty': $2.Empty$json,
   '.server.UnsubscribeRequest': UnsubscribeRequest$json,
 };
 
 /// Descriptor for `Server`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List serverServiceDescriptor = $convert.base64Decode(
-    'CgZTZXJ2ZXISLQoEQ2FsbBIPLnNlcnZlci5SZXF1ZXN0GhQuc2VydmVyLkNhbGxSZXNwb25zZR'
-    'I3CglTdWJzY3JpYmUSDy5zZXJ2ZXIuUmVxdWVzdBoZLnNlcnZlci5TdWJzY3JpYmVSZXNwb25z'
-    'ZRI/CgtVblN1YnNjcmliZRIaLnNlcnZlci5VbnN1YnNjcmliZVJlcXVlc3QaFC5nb29nbGUucH'
-    'JvdG9idWYuQW55');
+    'CgZTZXJ2ZXISLwoEQ2FsbBIPLnNlcnZlci5SZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcH'
+    'R5EjQKCVN1YnNjcmliZRIPLnNlcnZlci5SZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5'
+    'EkEKC1VuU3Vic2NyaWJlEhouc2VydmVyLlVuc3Vic2NyaWJlUmVxdWVzdBoWLmdvb2dsZS5wcm'
+    '90b2J1Zi5FbXB0eQ==');
 

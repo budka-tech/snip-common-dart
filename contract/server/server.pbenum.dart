@@ -39,10 +39,14 @@ class MessageType extends $pb.ProtobufEnum {
 }
 
 class Domain extends $pb.ProtobufEnum {
-  static const Domain Users = Domain._(0, _omitEnumNames ? '' : 'Users');
+  static const Domain Auth = Domain._(0, _omitEnumNames ? '' : 'Auth');
+  static const Domain Users = Domain._(1, _omitEnumNames ? '' : 'Users');
+  static const Domain Assist = Domain._(2, _omitEnumNames ? '' : 'Assist');
 
   static const $core.List<Domain> values = <Domain> [
+    Auth,
     Users,
+    Assist,
   ];
 
   static final $core.Map<$core.int, Domain> _byValue = $pb.ProtobufEnum.initByValue(values);
