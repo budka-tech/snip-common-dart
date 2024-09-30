@@ -13,17 +13,7 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use commonResponseDescriptor instead')
-const CommonResponse$json = {
-  '1': 'CommonResponse',
-  '2': [
-    {'1': 'status', '3': 1, '4': 1, '5': 13, '10': 'status'},
-  ],
-};
-
-/// Descriptor for `CommonResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commonResponseDescriptor = $convert.base64Decode(
-    'Cg5Db21tb25SZXNwb25zZRIWCgZzdGF0dXMYASABKA1SBnN0YXR1cw==');
+import '../common/common.pbjson.dart' as $0;
 
 @$core.Deprecated('Use sendSmsRequestDescriptor instead')
 const SendSmsRequest$json = {
@@ -54,21 +44,20 @@ final $typed_data.Uint8List flashCallRequestDescriptor = $convert.base64Decode(
 const $core.Map<$core.String, $core.dynamic> GsmServiceBase$json = {
   '1': 'Gsm',
   '2': [
-    {'1': 'SendSms', '2': '.gsm.SendSmsRequest', '3': '.gsm.CommonResponse'},
-    {'1': 'FlashCall', '2': '.gsm.FlashCallRequest', '3': '.gsm.CommonResponse'},
+    {'1': 'SendSms', '2': '.gsm.SendSmsRequest', '3': '.common.Response'},
+    {'1': 'FlashCall', '2': '.gsm.FlashCallRequest', '3': '.common.Response'},
   ],
 };
 
 @$core.Deprecated('Use gsmServiceDescriptor instead')
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> GsmServiceBase$messageJson = {
   '.gsm.SendSmsRequest': SendSmsRequest$json,
-  '.gsm.CommonResponse': CommonResponse$json,
+  '.common.Response': $0.Response$json,
   '.gsm.FlashCallRequest': FlashCallRequest$json,
 };
 
 /// Descriptor for `Gsm`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List gsmServiceDescriptor = $convert.base64Decode(
-    'CgNHc20SMwoHU2VuZFNtcxITLmdzbS5TZW5kU21zUmVxdWVzdBoTLmdzbS5Db21tb25SZXNwb2'
-    '5zZRI3CglGbGFzaENhbGwSFS5nc20uRmxhc2hDYWxsUmVxdWVzdBoTLmdzbS5Db21tb25SZXNw'
-    'b25zZQ==');
+    'CgNHc20SMAoHU2VuZFNtcxITLmdzbS5TZW5kU21zUmVxdWVzdBoQLmNvbW1vbi5SZXNwb25zZR'
+    'I0CglGbGFzaENhbGwSFS5nc20uRmxhc2hDYWxsUmVxdWVzdBoQLmNvbW1vbi5SZXNwb25zZQ==');
 

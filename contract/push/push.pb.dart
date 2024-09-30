@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: push.proto
+//  source: push/push.proto
 //
 // @dart = 2.12
 
@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'google/protobuf/timestamp.pb.dart' as $2;
+import '../google/protobuf/timestamp.pb.dart' as $2;
 
 class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse({

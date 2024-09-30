@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: push.proto
+//  source: push/push.proto
 //
 // @dart = 2.12
 
@@ -13,7 +13,7 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-import 'google/protobuf/timestamp.pbjson.dart' as $2;
+import '../google/protobuf/timestamp.pbjson.dart' as $2;
 
 @$core.Deprecated('Use commonResponseDescriptor instead')
 const CommonResponse$json = {

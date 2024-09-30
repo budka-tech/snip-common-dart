@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/any.pb.dart' as $1;
-import '../google/protobuf/empty.pb.dart' as $2;
+import '../google/protobuf/any.pb.dart' as $4;
+import '../google/protobuf/empty.pb.dart' as $5;
 import 'server.pbenum.dart';
 
 export 'server.pbenum.dart';
@@ -115,7 +115,7 @@ class Meta extends $pb.GeneratedMessage {
 class Request extends $pb.GeneratedMessage {
   factory Request({
     Meta? meta,
-    $1.Any? data,
+    $4.Any? data,
   }) {
     final $result = create();
     if (meta != null) {
@@ -132,7 +132,7 @@ class Request extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Request', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
-    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..aOM<$4.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $4.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -169,21 +169,21 @@ class Request extends $pb.GeneratedMessage {
   Meta ensureMeta() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.Any get data => $_getN(1);
+  $4.Any get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($1.Any v) { setField(2, v); }
+  set data($4.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $1.Any ensureData() => $_ensure(1);
+  $4.Any ensureData() => $_ensure(1);
 }
 
 class CallResponse extends $pb.GeneratedMessage {
   factory CallResponse({
     Meta? meta,
-    $1.Any? data,
+    $4.Any? data,
   }) {
     final $result = create();
     if (meta != null) {
@@ -200,7 +200,7 @@ class CallResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
-    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..aOM<$4.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $4.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -237,21 +237,21 @@ class CallResponse extends $pb.GeneratedMessage {
   Meta ensureMeta() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.Any get data => $_getN(1);
+  $4.Any get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($1.Any v) { setField(2, v); }
+  set data($4.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $1.Any ensureData() => $_ensure(1);
+  $4.Any ensureData() => $_ensure(1);
 }
 
 class CallSuccessResponse extends $pb.GeneratedMessage {
   factory CallSuccessResponse({
     Meta? meta,
-    $1.Any? data,
+    $4.Any? data,
   }) {
     final $result = create();
     if (meta != null) {
@@ -268,7 +268,7 @@ class CallSuccessResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CallSuccessResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..aOM<Meta>(1, _omitFieldNames ? '' : 'meta', subBuilder: Meta.create)
-    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..aOM<$4.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $4.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -305,15 +305,15 @@ class CallSuccessResponse extends $pb.GeneratedMessage {
   Meta ensureMeta() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.Any get data => $_getN(1);
+  $4.Any get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($1.Any v) { setField(2, v); }
+  set data($4.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $1.Any ensureData() => $_ensure(1);
+  $4.Any ensureData() => $_ensure(1);
 }
 
 class CallErrorResponse extends $pb.GeneratedMessage {
@@ -489,7 +489,7 @@ class UnsubscribeRequest extends $pb.GeneratedMessage {
 class SubscribeData extends $pb.GeneratedMessage {
   factory SubscribeData({
     SubscribeAction? action,
-    $1.Any? data,
+    $4.Any? data,
   }) {
     final $result = create();
     if (action != null) {
@@ -506,7 +506,7 @@ class SubscribeData extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubscribeData', package: const $pb.PackageName(_omitMessageNames ? '' : 'server'), createEmptyInstance: create)
     ..e<SubscribeAction>(1, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: SubscribeAction.Init, valueOf: SubscribeAction.valueOf, enumValues: SubscribeAction.values)
-    ..aOM<$1.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $1.Any.create)
+    ..aOM<$4.Any>(2, _omitFieldNames ? '' : 'data', subBuilder: $4.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -541,15 +541,15 @@ class SubscribeData extends $pb.GeneratedMessage {
   void clearAction() => clearField(1);
 
   @$pb.TagNumber(2)
-  $1.Any get data => $_getN(1);
+  $4.Any get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($1.Any v) { setField(2, v); }
+  set data($4.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
   void clearData() => clearField(2);
   @$pb.TagNumber(2)
-  $1.Any ensureData() => $_ensure(1);
+  $4.Any ensureData() => $_ensure(1);
 }
 
 class SubscribeResponse extends $pb.GeneratedMessage {
@@ -756,14 +756,14 @@ class ServerApi {
   $pb.RpcClient _client;
   ServerApi(this._client);
 
-  $async.Future<$2.Empty> call($pb.ClientContext? ctx, Request request) =>
-    _client.invoke<$2.Empty>(ctx, 'Server', 'Call', request, $2.Empty())
+  $async.Future<$5.Empty> call($pb.ClientContext? ctx, Request request) =>
+    _client.invoke<$5.Empty>(ctx, 'Server', 'Call', request, $5.Empty())
   ;
-  $async.Future<$2.Empty> subscribe($pb.ClientContext? ctx, Request request) =>
-    _client.invoke<$2.Empty>(ctx, 'Server', 'Subscribe', request, $2.Empty())
+  $async.Future<$5.Empty> subscribe($pb.ClientContext? ctx, Request request) =>
+    _client.invoke<$5.Empty>(ctx, 'Server', 'Subscribe', request, $5.Empty())
   ;
-  $async.Future<$2.Empty> unSubscribe($pb.ClientContext? ctx, UnsubscribeRequest request) =>
-    _client.invoke<$2.Empty>(ctx, 'Server', 'UnSubscribe', request, $2.Empty())
+  $async.Future<$5.Empty> unSubscribe($pb.ClientContext? ctx, UnsubscribeRequest request) =>
+    _client.invoke<$5.Empty>(ctx, 'Server', 'UnSubscribe', request, $5.Empty())
   ;
 }
 

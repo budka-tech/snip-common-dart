@@ -14,55 +14,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class CommonResponse extends $pb.GeneratedMessage {
-  factory CommonResponse({
-    $core.int? status,
-  }) {
-    final $result = create();
-    if (status != null) {
-      $result.status = status;
-    }
-    return $result;
-  }
-  CommonResponse._() : super();
-  factory CommonResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CommonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CommonResponse clone() => CommonResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CommonResponse copyWith(void Function(CommonResponse) updates) => super.copyWith((message) => updates(message as CommonResponse)) as CommonResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static CommonResponse create() => CommonResponse._();
-  CommonResponse createEmptyInstance() => create();
-  static $pb.PbList<CommonResponse> createRepeated() => $pb.PbList<CommonResponse>();
-  @$core.pragma('dart2js:noInline')
-  static CommonResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommonResponse>(create);
-  static CommonResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get status => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set status($core.int v) { $_setUnsignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasStatus() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
-}
+import '../common/common.pb.dart' as $0;
 
 class SendSmsRequest extends $pb.GeneratedMessage {
   factory SendSmsRequest({
@@ -182,11 +134,11 @@ class GsmApi {
   $pb.RpcClient _client;
   GsmApi(this._client);
 
-  $async.Future<CommonResponse> sendSms($pb.ClientContext? ctx, SendSmsRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Gsm', 'SendSms', request, CommonResponse())
+  $async.Future<$0.Response> sendSms($pb.ClientContext? ctx, SendSmsRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Gsm', 'SendSms', request, $0.Response())
   ;
-  $async.Future<CommonResponse> flashCall($pb.ClientContext? ctx, FlashCallRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Gsm', 'FlashCall', request, CommonResponse())
+  $async.Future<$0.Response> flashCall($pb.ClientContext? ctx, FlashCallRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Gsm', 'FlashCall', request, $0.Response())
   ;
 }
 

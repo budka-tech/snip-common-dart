@@ -15,60 +15,11 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../google/protobuf/timestamp.pb.dart' as $4;
+import '../common/common.pb.dart' as $0;
+import '../google/protobuf/timestamp.pb.dart' as $2;
 import 'users.pbenum.dart';
 
 export 'users.pbenum.dart';
-
-class CommonResponse extends $pb.GeneratedMessage {
-  factory CommonResponse({
-    $core.int? status,
-  }) {
-    final $result = create();
-    if (status != null) {
-      $result.status = status;
-    }
-    return $result;
-  }
-  CommonResponse._() : super();
-  factory CommonResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CommonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  CommonResponse clone() => CommonResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  CommonResponse copyWith(void Function(CommonResponse) updates) => super.copyWith((message) => updates(message as CommonResponse)) as CommonResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static CommonResponse create() => CommonResponse._();
-  CommonResponse createEmptyInstance() => create();
-  static $pb.PbList<CommonResponse> createRepeated() => $pb.PbList<CommonResponse>();
-  @$core.pragma('dart2js:noInline')
-  static CommonResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommonResponse>(create);
-  static CommonResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get status => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set status($core.int v) { $_setUnsignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasStatus() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
-}
 
 class CommonRequest extends $pb.GeneratedMessage {
   factory CommonRequest({
@@ -644,13 +595,13 @@ class Account extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? surname,
     $core.String? patronymic,
-    $4.Timestamp? birthdate,
+    $2.Timestamp? birthdate,
     $core.int? country,
     $core.int? district,
     $core.int? locale,
     $core.int? timezone,
-    $4.Timestamp? createdAt,
-    $4.Timestamp? updatedAt,
+    $2.Timestamp? createdAt,
+    $2.Timestamp? updatedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -713,13 +664,13 @@ class Account extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'name')
     ..aOS(7, _omitFieldNames ? '' : 'surname')
     ..aOS(8, _omitFieldNames ? '' : 'patronymic')
-    ..aOM<$4.Timestamp>(9, _omitFieldNames ? '' : 'birthdate', subBuilder: $4.Timestamp.create)
+    ..aOM<$2.Timestamp>(9, _omitFieldNames ? '' : 'birthdate', subBuilder: $2.Timestamp.create)
     ..a<$core.int>(10, _omitFieldNames ? '' : 'country', $pb.PbFieldType.O3)
     ..a<$core.int>(11, _omitFieldNames ? '' : 'district', $pb.PbFieldType.O3)
     ..a<$core.int>(12, _omitFieldNames ? '' : 'locale', $pb.PbFieldType.O3)
     ..a<$core.int>(13, _omitFieldNames ? '' : 'timezone', $pb.PbFieldType.O3)
-    ..aOM<$4.Timestamp>(14, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
-    ..aOM<$4.Timestamp>(15, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$2.Timestamp>(14, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(15, _omitFieldNames ? '' : 'updatedAt', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -799,15 +750,15 @@ class Account extends $pb.GeneratedMessage {
   void clearPatronymic() => clearField(8);
 
   @$pb.TagNumber(9)
-  $4.Timestamp get birthdate => $_getN(8);
+  $2.Timestamp get birthdate => $_getN(8);
   @$pb.TagNumber(9)
-  set birthdate($4.Timestamp v) { setField(9, v); }
+  set birthdate($2.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasBirthdate() => $_has(8);
   @$pb.TagNumber(9)
   void clearBirthdate() => clearField(9);
   @$pb.TagNumber(9)
-  $4.Timestamp ensureBirthdate() => $_ensure(8);
+  $2.Timestamp ensureBirthdate() => $_ensure(8);
 
   @$pb.TagNumber(10)
   $core.int get country => $_getIZ(9);
@@ -846,26 +797,26 @@ class Account extends $pb.GeneratedMessage {
   void clearTimezone() => clearField(13);
 
   @$pb.TagNumber(14)
-  $4.Timestamp get createdAt => $_getN(13);
+  $2.Timestamp get createdAt => $_getN(13);
   @$pb.TagNumber(14)
-  set createdAt($4.Timestamp v) { setField(14, v); }
+  set createdAt($2.Timestamp v) { setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasCreatedAt() => $_has(13);
   @$pb.TagNumber(14)
   void clearCreatedAt() => clearField(14);
   @$pb.TagNumber(14)
-  $4.Timestamp ensureCreatedAt() => $_ensure(13);
+  $2.Timestamp ensureCreatedAt() => $_ensure(13);
 
   @$pb.TagNumber(15)
-  $4.Timestamp get updatedAt => $_getN(14);
+  $2.Timestamp get updatedAt => $_getN(14);
   @$pb.TagNumber(15)
-  set updatedAt($4.Timestamp v) { setField(15, v); }
+  set updatedAt($2.Timestamp v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasUpdatedAt() => $_has(14);
   @$pb.TagNumber(15)
   void clearUpdatedAt() => clearField(15);
   @$pb.TagNumber(15)
-  $4.Timestamp ensureUpdatedAt() => $_ensure(14);
+  $2.Timestamp ensureUpdatedAt() => $_ensure(14);
 }
 
 class AccountEmail extends $pb.GeneratedMessage {
@@ -874,8 +825,8 @@ class AccountEmail extends $pb.GeneratedMessage {
     $core.int? accountId,
     $core.String? email,
     $core.int? order,
-    $4.Timestamp? createdAt,
-    $4.Timestamp? updatedAt,
+    $2.Timestamp? createdAt,
+    $2.Timestamp? updatedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -907,8 +858,8 @@ class AccountEmail extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3)
     ..aOS(3, _omitFieldNames ? '' : 'email')
     ..a<$core.int>(4, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
-    ..aOM<$4.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
-    ..aOM<$4.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -970,26 +921,26 @@ class AccountEmail extends $pb.GeneratedMessage {
   void clearOrder() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.Timestamp get createdAt => $_getN(4);
+  $2.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set createdAt($4.Timestamp v) { setField(5, v); }
+  set createdAt($2.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => clearField(5);
   @$pb.TagNumber(5)
-  $4.Timestamp ensureCreatedAt() => $_ensure(4);
+  $2.Timestamp ensureCreatedAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $4.Timestamp get updatedAt => $_getN(5);
+  $2.Timestamp get updatedAt => $_getN(5);
   @$pb.TagNumber(6)
-  set updatedAt($4.Timestamp v) { setField(6, v); }
+  set updatedAt($2.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasUpdatedAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearUpdatedAt() => clearField(6);
   @$pb.TagNumber(6)
-  $4.Timestamp ensureUpdatedAt() => $_ensure(5);
+  $2.Timestamp ensureUpdatedAt() => $_ensure(5);
 }
 
 class AccountPhone extends $pb.GeneratedMessage {
@@ -998,8 +949,8 @@ class AccountPhone extends $pb.GeneratedMessage {
     $core.int? accountId,
     $core.String? phone,
     $core.int? order,
-    $4.Timestamp? createdAt,
-    $4.Timestamp? updatedAt,
+    $2.Timestamp? createdAt,
+    $2.Timestamp? updatedAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -1031,8 +982,8 @@ class AccountPhone extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3)
     ..aOS(3, _omitFieldNames ? '' : 'phone')
     ..a<$core.int>(4, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
-    ..aOM<$4.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
-    ..aOM<$4.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(6, _omitFieldNames ? '' : 'updatedAt', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1094,26 +1045,26 @@ class AccountPhone extends $pb.GeneratedMessage {
   void clearOrder() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.Timestamp get createdAt => $_getN(4);
+  $2.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set createdAt($4.Timestamp v) { setField(5, v); }
+  set createdAt($2.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => clearField(5);
   @$pb.TagNumber(5)
-  $4.Timestamp ensureCreatedAt() => $_ensure(4);
+  $2.Timestamp ensureCreatedAt() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $4.Timestamp get updatedAt => $_getN(5);
+  $2.Timestamp get updatedAt => $_getN(5);
   @$pb.TagNumber(6)
-  set updatedAt($4.Timestamp v) { setField(6, v); }
+  set updatedAt($2.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasUpdatedAt() => $_has(5);
   @$pb.TagNumber(6)
   void clearUpdatedAt() => clearField(6);
   @$pb.TagNumber(6)
-  $4.Timestamp ensureUpdatedAt() => $_ensure(5);
+  $2.Timestamp ensureUpdatedAt() => $_ensure(5);
 }
 
 class AccountRole extends $pb.GeneratedMessage {
@@ -1122,7 +1073,7 @@ class AccountRole extends $pb.GeneratedMessage {
     $core.int? accountId,
     $core.String? role,
     $core.int? order,
-    $4.Timestamp? createdAt,
+    $2.Timestamp? createdAt,
   }) {
     final $result = create();
     if (id != null) {
@@ -1151,7 +1102,7 @@ class AccountRole extends $pb.GeneratedMessage {
     ..a<$core.int>(2, _omitFieldNames ? '' : 'accountId', $pb.PbFieldType.OU3)
     ..aOS(3, _omitFieldNames ? '' : 'role')
     ..a<$core.int>(4, _omitFieldNames ? '' : 'order', $pb.PbFieldType.O3)
-    ..aOM<$4.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $4.Timestamp.create)
+    ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'createdAt', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1213,15 +1164,15 @@ class AccountRole extends $pb.GeneratedMessage {
   void clearOrder() => clearField(4);
 
   @$pb.TagNumber(5)
-  $4.Timestamp get createdAt => $_getN(4);
+  $2.Timestamp get createdAt => $_getN(4);
   @$pb.TagNumber(5)
-  set createdAt($4.Timestamp v) { setField(5, v); }
+  set createdAt($2.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
   void clearCreatedAt() => clearField(5);
   @$pb.TagNumber(5)
-  $4.Timestamp ensureCreatedAt() => $_ensure(4);
+  $2.Timestamp ensureCreatedAt() => $_ensure(4);
 }
 
 class UpdateAccountDataRequest extends $pb.GeneratedMessage {
@@ -1699,8 +1650,8 @@ class UsersApi {
   $async.Future<IdentificationResponse> identification($pb.ClientContext? ctx, IdentificationRequest request) =>
     _client.invoke<IdentificationResponse>(ctx, 'Users', 'Identification', request, IdentificationResponse())
   ;
-  $async.Future<CommonResponse> checkCode($pb.ClientContext? ctx, CheckCodeRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'CheckCode', request, CommonResponse())
+  $async.Future<$0.Response> checkCode($pb.ClientContext? ctx, CheckCodeRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'CheckCode', request, $0.Response())
   ;
   $async.Future<LoginResponse> loginByCode($pb.ClientContext? ctx, LoginRequest request) =>
     _client.invoke<LoginResponse>(ctx, 'Users', 'LoginByCode', request, LoginResponse())
@@ -1708,29 +1659,29 @@ class UsersApi {
   $async.Future<LoginResponse> register($pb.ClientContext? ctx, RegisterRequest request) =>
     _client.invoke<LoginResponse>(ctx, 'Users', 'Register', request, LoginResponse())
   ;
-  $async.Future<CommonResponse> hasSession($pb.ClientContext? ctx, HasSessionRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'HasSession', request, CommonResponse())
+  $async.Future<$0.Response> hasSession($pb.ClientContext? ctx, HasSessionRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'HasSession', request, $0.Response())
   ;
   $async.Future<Account> getAccount($pb.ClientContext? ctx, CommonRequest request) =>
     _client.invoke<Account>(ctx, 'Users', 'GetAccount', request, Account())
   ;
-  $async.Future<CommonResponse> updateAccountData($pb.ClientContext? ctx, UpdateAccountDataRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'UpdateAccountData', request, CommonResponse())
+  $async.Future<$0.Response> updateAccountData($pb.ClientContext? ctx, UpdateAccountDataRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'UpdateAccountData', request, $0.Response())
   ;
-  $async.Future<CommonResponse> updatePassword($pb.ClientContext? ctx, UpdatePasswordRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'UpdatePassword', request, CommonResponse())
+  $async.Future<$0.Response> updatePassword($pb.ClientContext? ctx, UpdatePasswordRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'UpdatePassword', request, $0.Response())
   ;
-  $async.Future<CommonResponse> updatePhoto($pb.ClientContext? ctx, UpdatePhotoRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'UpdatePhoto', request, CommonResponse())
+  $async.Future<$0.Response> updatePhoto($pb.ClientContext? ctx, UpdatePhotoRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'UpdatePhoto', request, $0.Response())
   ;
-  $async.Future<CommonResponse> addPhone($pb.ClientContext? ctx, AddPhoneRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'AddPhone', request, CommonResponse())
+  $async.Future<$0.Response> addPhone($pb.ClientContext? ctx, AddPhoneRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'AddPhone', request, $0.Response())
   ;
-  $async.Future<CommonResponse> updatePhone($pb.ClientContext? ctx, UpdatePhotoRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'UpdatePhone', request, CommonResponse())
+  $async.Future<$0.Response> updatePhone($pb.ClientContext? ctx, UpdatePhotoRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'UpdatePhone', request, $0.Response())
   ;
-  $async.Future<CommonResponse> removePhone($pb.ClientContext? ctx, RemovePhoneRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'RemovePhone', request, CommonResponse())
+  $async.Future<$0.Response> removePhone($pb.ClientContext? ctx, RemovePhoneRequest request) =>
+    _client.invoke<$0.Response>(ctx, 'Users', 'RemovePhone', request, $0.Response())
   ;
 }
 

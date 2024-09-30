@@ -13,7 +13,8 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-import '../google/protobuf/timestamp.pbjson.dart' as $4;
+import '../common/common.pbjson.dart' as $0;
+import '../google/protobuf/timestamp.pbjson.dart' as $2;
 
 @$core.Deprecated('Use identificationTypeDescriptor instead')
 const IdentificationType$json = {
@@ -28,18 +29,6 @@ const IdentificationType$json = {
 /// Descriptor for `IdentificationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List identificationTypeDescriptor = $convert.base64Decode(
     'ChJJZGVudGlmaWNhdGlvblR5cGUSDQoJRmxhc2hDYWxsEAASBwoDU01TEAESCAoEUHVzaBAC');
-
-@$core.Deprecated('Use commonResponseDescriptor instead')
-const CommonResponse$json = {
-  '1': 'CommonResponse',
-  '2': [
-    {'1': 'status', '3': 1, '4': 1, '5': 13, '10': 'status'},
-  ],
-};
-
-/// Descriptor for `CommonResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List commonResponseDescriptor = $convert.base64Decode(
-    'Cg5Db21tb25SZXNwb25zZRIWCgZzdGF0dXMYASABKA1SBnN0YXR1cw==');
 
 @$core.Deprecated('Use commonRequestDescriptor instead')
 const CommonRequest$json = {
@@ -358,17 +347,17 @@ const $core.Map<$core.String, $core.dynamic> UsersServiceBase$json = {
   '1': 'Users',
   '2': [
     {'1': 'Identification', '2': '.users.IdentificationRequest', '3': '.users.IdentificationResponse'},
-    {'1': 'CheckCode', '2': '.users.CheckCodeRequest', '3': '.users.CommonResponse'},
+    {'1': 'CheckCode', '2': '.users.CheckCodeRequest', '3': '.common.Response'},
     {'1': 'LoginByCode', '2': '.users.LoginRequest', '3': '.users.LoginResponse'},
     {'1': 'Register', '2': '.users.RegisterRequest', '3': '.users.LoginResponse'},
-    {'1': 'HasSession', '2': '.users.HasSessionRequest', '3': '.users.CommonResponse'},
+    {'1': 'HasSession', '2': '.users.HasSessionRequest', '3': '.common.Response'},
     {'1': 'GetAccount', '2': '.users.CommonRequest', '3': '.users.Account'},
-    {'1': 'UpdateAccountData', '2': '.users.UpdateAccountDataRequest', '3': '.users.CommonResponse'},
-    {'1': 'UpdatePassword', '2': '.users.UpdatePasswordRequest', '3': '.users.CommonResponse'},
-    {'1': 'UpdatePhoto', '2': '.users.UpdatePhotoRequest', '3': '.users.CommonResponse'},
-    {'1': 'AddPhone', '2': '.users.AddPhoneRequest', '3': '.users.CommonResponse'},
-    {'1': 'UpdatePhone', '2': '.users.UpdatePhotoRequest', '3': '.users.CommonResponse'},
-    {'1': 'RemovePhone', '2': '.users.RemovePhoneRequest', '3': '.users.CommonResponse'},
+    {'1': 'UpdateAccountData', '2': '.users.UpdateAccountDataRequest', '3': '.common.Response'},
+    {'1': 'UpdatePassword', '2': '.users.UpdatePasswordRequest', '3': '.common.Response'},
+    {'1': 'UpdatePhoto', '2': '.users.UpdatePhotoRequest', '3': '.common.Response'},
+    {'1': 'AddPhone', '2': '.users.AddPhoneRequest', '3': '.common.Response'},
+    {'1': 'UpdatePhone', '2': '.users.UpdatePhotoRequest', '3': '.common.Response'},
+    {'1': 'RemovePhone', '2': '.users.RemovePhoneRequest', '3': '.common.Response'},
   ],
 };
 
@@ -377,12 +366,12 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> UsersServi
   '.users.IdentificationRequest': IdentificationRequest$json,
   '.users.IdentificationResponse': IdentificationResponse$json,
   '.users.CheckCodeRequest': CheckCodeRequest$json,
-  '.users.CommonResponse': CommonResponse$json,
+  '.common.Response': $0.Response$json,
   '.users.LoginRequest': LoginRequest$json,
   '.users.LoginResponse': LoginResponse$json,
   '.users.Account': Account$json,
   '.users.AccountPhone': AccountPhone$json,
-  '.google.protobuf.Timestamp': $4.Timestamp$json,
+  '.google.protobuf.Timestamp': $2.Timestamp$json,
   '.users.AccountEmail': AccountEmail$json,
   '.users.AccountRole': AccountRole$json,
   '.users.RegisterRequest': RegisterRequest$json,
@@ -398,18 +387,17 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> UsersServi
 /// Descriptor for `Users`. Decode as a `google.protobuf.ServiceDescriptorProto`.
 final $typed_data.Uint8List usersServiceDescriptor = $convert.base64Decode(
     'CgVVc2VycxJNCg5JZGVudGlmaWNhdGlvbhIcLnVzZXJzLklkZW50aWZpY2F0aW9uUmVxdWVzdB'
-    'odLnVzZXJzLklkZW50aWZpY2F0aW9uUmVzcG9uc2USOwoJQ2hlY2tDb2RlEhcudXNlcnMuQ2hl'
-    'Y2tDb2RlUmVxdWVzdBoVLnVzZXJzLkNvbW1vblJlc3BvbnNlEjgKC0xvZ2luQnlDb2RlEhMudX'
-    'NlcnMuTG9naW5SZXF1ZXN0GhQudXNlcnMuTG9naW5SZXNwb25zZRI4CghSZWdpc3RlchIWLnVz'
-    'ZXJzLlJlZ2lzdGVyUmVxdWVzdBoULnVzZXJzLkxvZ2luUmVzcG9uc2USPQoKSGFzU2Vzc2lvbh'
-    'IYLnVzZXJzLkhhc1Nlc3Npb25SZXF1ZXN0GhUudXNlcnMuQ29tbW9uUmVzcG9uc2USMgoKR2V0'
-    'QWNjb3VudBIULnVzZXJzLkNvbW1vblJlcXVlc3QaDi51c2Vycy5BY2NvdW50EksKEVVwZGF0ZU'
-    'FjY291bnREYXRhEh8udXNlcnMuVXBkYXRlQWNjb3VudERhdGFSZXF1ZXN0GhUudXNlcnMuQ29t'
-    'bW9uUmVzcG9uc2USRQoOVXBkYXRlUGFzc3dvcmQSHC51c2Vycy5VcGRhdGVQYXNzd29yZFJlcX'
-    'Vlc3QaFS51c2Vycy5Db21tb25SZXNwb25zZRI/CgtVcGRhdGVQaG90bxIZLnVzZXJzLlVwZGF0'
-    'ZVBob3RvUmVxdWVzdBoVLnVzZXJzLkNvbW1vblJlc3BvbnNlEjkKCEFkZFBob25lEhYudXNlcn'
-    'MuQWRkUGhvbmVSZXF1ZXN0GhUudXNlcnMuQ29tbW9uUmVzcG9uc2USPwoLVXBkYXRlUGhvbmUS'
-    'GS51c2Vycy5VcGRhdGVQaG90b1JlcXVlc3QaFS51c2Vycy5Db21tb25SZXNwb25zZRI/CgtSZW'
-    '1vdmVQaG9uZRIZLnVzZXJzLlJlbW92ZVBob25lUmVxdWVzdBoVLnVzZXJzLkNvbW1vblJlc3Bv'
-    'bnNl');
+    'odLnVzZXJzLklkZW50aWZpY2F0aW9uUmVzcG9uc2USNgoJQ2hlY2tDb2RlEhcudXNlcnMuQ2hl'
+    'Y2tDb2RlUmVxdWVzdBoQLmNvbW1vbi5SZXNwb25zZRI4CgtMb2dpbkJ5Q29kZRITLnVzZXJzLk'
+    'xvZ2luUmVxdWVzdBoULnVzZXJzLkxvZ2luUmVzcG9uc2USOAoIUmVnaXN0ZXISFi51c2Vycy5S'
+    'ZWdpc3RlclJlcXVlc3QaFC51c2Vycy5Mb2dpblJlc3BvbnNlEjgKCkhhc1Nlc3Npb24SGC51c2'
+    'Vycy5IYXNTZXNzaW9uUmVxdWVzdBoQLmNvbW1vbi5SZXNwb25zZRIyCgpHZXRBY2NvdW50EhQu'
+    'dXNlcnMuQ29tbW9uUmVxdWVzdBoOLnVzZXJzLkFjY291bnQSRgoRVXBkYXRlQWNjb3VudERhdG'
+    'ESHy51c2Vycy5VcGRhdGVBY2NvdW50RGF0YVJlcXVlc3QaEC5jb21tb24uUmVzcG9uc2USQAoO'
+    'VXBkYXRlUGFzc3dvcmQSHC51c2Vycy5VcGRhdGVQYXNzd29yZFJlcXVlc3QaEC5jb21tb24uUm'
+    'VzcG9uc2USOgoLVXBkYXRlUGhvdG8SGS51c2Vycy5VcGRhdGVQaG90b1JlcXVlc3QaEC5jb21t'
+    'b24uUmVzcG9uc2USNAoIQWRkUGhvbmUSFi51c2Vycy5BZGRQaG9uZVJlcXVlc3QaEC5jb21tb2'
+    '4uUmVzcG9uc2USOgoLVXBkYXRlUGhvbmUSGS51c2Vycy5VcGRhdGVQaG90b1JlcXVlc3QaEC5j'
+    'b21tb24uUmVzcG9uc2USOgoLUmVtb3ZlUGhvbmUSGS51c2Vycy5SZW1vdmVQaG9uZVJlcXVlc3'
+    'QaEC5jb21tb24uUmVzcG9uc2U=');
 

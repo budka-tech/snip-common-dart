@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: common.proto
+//  source: common/common.proto
 //
 // @dart = 2.12
 

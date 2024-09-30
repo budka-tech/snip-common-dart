@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: gsm.proto
+//  source: push/push.proto
 //
 // @dart = 2.12
 

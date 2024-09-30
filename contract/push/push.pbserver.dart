@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: gsm.proto
+//  source: push/push.proto
 //
 // @dart = 2.12
 
@@ -15,33 +15,32 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'common.pb.dart' as $0;
-import 'gsm.pb.dart' as $1;
-import 'gsm.pbjson.dart';
+import 'push.pb.dart' as $3;
+import 'push.pbjson.dart';
 
-export 'gsm.pb.dart';
+export 'push.pb.dart';
 
-abstract class GsmServiceBase extends $pb.GeneratedService {
-  $async.Future<$0.Response> sendSms($pb.ServerContext ctx, $1.SendSmsRequest request);
-  $async.Future<$0.Response> flashCall($pb.ServerContext ctx, $1.FlashCallRequest request);
+abstract class PushServiceBase extends $pb.GeneratedService {
+  $async.Future<$3.CommonResponse> now($pb.ServerContext ctx, $3.NowRequest request);
+  $async.Future<$3.CommonResponse> schedule($pb.ServerContext ctx, $3.ScheduleRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'SendSms': return $1.SendSmsRequest();
-      case 'FlashCall': return $1.FlashCallRequest();
+      case 'Now': return $3.NowRequest();
+      case 'Schedule': return $3.ScheduleRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'SendSms': return this.sendSms(ctx, request as $1.SendSmsRequest);
-      case 'FlashCall': return this.flashCall(ctx, request as $1.FlashCallRequest);
+      case 'Now': return this.now(ctx, request as $3.NowRequest);
+      case 'Schedule': return this.schedule(ctx, request as $3.ScheduleRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
-  $core.Map<$core.String, $core.dynamic> get $json => GsmServiceBase$json;
-  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> get $messageJson => GsmServiceBase$messageJson;
+  $core.Map<$core.String, $core.dynamic> get $json => PushServiceBase$json;
+  $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> get $messageJson => PushServiceBase$messageJson;
 }
 

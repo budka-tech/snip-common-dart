@@ -13,8 +13,8 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-import '../google/protobuf/any.pbjson.dart' as $1;
-import '../google/protobuf/empty.pbjson.dart' as $2;
+import '../google/protobuf/any.pbjson.dart' as $4;
+import '../google/protobuf/empty.pbjson.dart' as $5;
 
 @$core.Deprecated('Use messageTypeDescriptor instead')
 const MessageType$json = {
@@ -232,8 +232,8 @@ const $core.Map<$core.String, $core.dynamic> ServerServiceBase$json = {
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> ServerServiceBase$messageJson = {
   '.server.Request': Request$json,
   '.server.Meta': Meta$json,
-  '.google.protobuf.Any': $1.Any$json,
-  '.google.protobuf.Empty': $2.Empty$json,
+  '.google.protobuf.Any': $4.Any$json,
+  '.google.protobuf.Empty': $5.Empty$json,
   '.server.UnsubscribeRequest': UnsubscribeRequest$json,
 };
 
