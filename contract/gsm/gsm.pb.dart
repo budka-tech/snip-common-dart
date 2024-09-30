@@ -16,15 +16,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse({
-    $core.bool? status,
-    $core.int? code,
+    $core.int? status,
   }) {
     final $result = create();
     if (status != null) {
       $result.status = status;
-    }
-    if (code != null) {
-      $result.code = code;
     }
     return $result;
   }
@@ -33,8 +29,7 @@ class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'gsm'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'status')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
@@ -60,22 +55,13 @@ class CommonResponse extends $pb.GeneratedMessage {
   static CommonResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get status => $_getBF(0);
+  $core.int get status => $_getIZ(0);
   @$pb.TagNumber(1)
-  set status($core.bool v) { $_setBool(0, v); }
+  set status($core.int v) { $_setUnsignedInt32(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.int get code => $_getIZ(1);
-  @$pb.TagNumber(2)
-  set code($core.int v) { $_setUnsignedInt32(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasCode() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearCode() => clearField(2);
 }
 
 class SendSmsRequest extends $pb.GeneratedMessage {

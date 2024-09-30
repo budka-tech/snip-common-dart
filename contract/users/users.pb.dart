@@ -16,18 +16,17 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../google/protobuf/timestamp.pb.dart' as $4;
+import 'users.pbenum.dart';
+
+export 'users.pbenum.dart';
 
 class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse({
-    $core.bool? status,
-    $core.int? code,
+    $core.int? status,
   }) {
     final $result = create();
     if (status != null) {
       $result.status = status;
-    }
-    if (code != null) {
-      $result.code = code;
     }
     return $result;
   }
@@ -36,8 +35,7 @@ class CommonResponse extends $pb.GeneratedMessage {
   factory CommonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CommonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'status')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'code', $pb.PbFieldType.OU3)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
@@ -63,22 +61,13 @@ class CommonResponse extends $pb.GeneratedMessage {
   static CommonResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get status => $_getBF(0);
+  $core.int get status => $_getIZ(0);
   @$pb.TagNumber(1)
-  set status($core.bool v) { $_setBool(0, v); }
+  set status($core.int v) { $_setUnsignedInt32(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
   void clearStatus() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.int get code => $_getIZ(1);
-  @$pb.TagNumber(2)
-  set code($core.int v) { $_setUnsignedInt32(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasCode() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearCode() => clearField(2);
 }
 
 class CommonRequest extends $pb.GeneratedMessage {
@@ -129,6 +118,192 @@ class CommonRequest extends $pb.GeneratedMessage {
   $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(2)
   void clearAccountId() => clearField(2);
+}
+
+class IdentificationRequest extends $pb.GeneratedMessage {
+  factory IdentificationRequest({
+    $core.String? phone,
+  }) {
+    final $result = create();
+    if (phone != null) {
+      $result.phone = phone;
+    }
+    return $result;
+  }
+  IdentificationRequest._() : super();
+  factory IdentificationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IdentificationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'phone')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IdentificationRequest clone() => IdentificationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IdentificationRequest copyWith(void Function(IdentificationRequest) updates) => super.copyWith((message) => updates(message as IdentificationRequest)) as IdentificationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IdentificationRequest create() => IdentificationRequest._();
+  IdentificationRequest createEmptyInstance() => create();
+  static $pb.PbList<IdentificationRequest> createRepeated() => $pb.PbList<IdentificationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static IdentificationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IdentificationRequest>(create);
+  static IdentificationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get phone => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set phone($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPhone() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPhone() => clearField(1);
+}
+
+class IdentificationResponse extends $pb.GeneratedMessage {
+  factory IdentificationResponse({
+    $core.int? status,
+    IdentificationType? type,
+    $core.Iterable<IdentificationType>? otherMethods,
+    $core.String? data,
+  }) {
+    final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (otherMethods != null) {
+      $result.otherMethods.addAll(otherMethods);
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
+  IdentificationResponse._() : super();
+  factory IdentificationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IdentificationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IdentificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
+    ..e<IdentificationType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: IdentificationType.FlashCall, valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values)
+    ..pc<IdentificationType>(3, _omitFieldNames ? '' : 'otherMethods', $pb.PbFieldType.KE, protoName: 'otherMethods', valueOf: IdentificationType.valueOf, enumValues: IdentificationType.values, defaultEnumValue: IdentificationType.FlashCall)
+    ..aOS(4, _omitFieldNames ? '' : 'data')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IdentificationResponse clone() => IdentificationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IdentificationResponse copyWith(void Function(IdentificationResponse) updates) => super.copyWith((message) => updates(message as IdentificationResponse)) as IdentificationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IdentificationResponse create() => IdentificationResponse._();
+  IdentificationResponse createEmptyInstance() => create();
+  static $pb.PbList<IdentificationResponse> createRepeated() => $pb.PbList<IdentificationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static IdentificationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IdentificationResponse>(create);
+  static IdentificationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get status => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set status($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => clearField(1);
+
+  @$pb.TagNumber(2)
+  IdentificationType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(IdentificationType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<IdentificationType> get otherMethods => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get data => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set data($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasData() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearData() => clearField(4);
+}
+
+class CheckCodeRequest extends $pb.GeneratedMessage {
+  factory CheckCodeRequest({
+    $core.String? code,
+  }) {
+    final $result = create();
+    if (code != null) {
+      $result.code = code;
+    }
+    return $result;
+  }
+  CheckCodeRequest._() : super();
+  factory CheckCodeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CheckCodeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CheckCodeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'code')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CheckCodeRequest clone() => CheckCodeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CheckCodeRequest copyWith(void Function(CheckCodeRequest) updates) => super.copyWith((message) => updates(message as CheckCodeRequest)) as CheckCodeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CheckCodeRequest create() => CheckCodeRequest._();
+  CheckCodeRequest createEmptyInstance() => create();
+  static $pb.PbList<CheckCodeRequest> createRepeated() => $pb.PbList<CheckCodeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CheckCodeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CheckCodeRequest>(create);
+  static CheckCodeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get code => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set code($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCode() => clearField(1);
 }
 
 class HasSessionRequest extends $pb.GeneratedMessage {
@@ -198,10 +373,34 @@ class HasSessionRequest extends $pb.GeneratedMessage {
 class RegisterRequest extends $pb.GeneratedMessage {
   factory RegisterRequest({
     $core.String? phone,
+    $core.String? name,
+    $core.String? surname,
+    $core.int? country,
+    $core.int? district,
+    $core.int? locale,
+    $core.int? timezone,
   }) {
     final $result = create();
     if (phone != null) {
       $result.phone = phone;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (surname != null) {
+      $result.surname = surname;
+    }
+    if (country != null) {
+      $result.country = country;
+    }
+    if (district != null) {
+      $result.district = district;
+    }
+    if (locale != null) {
+      $result.locale = locale;
+    }
+    if (timezone != null) {
+      $result.timezone = timezone;
     }
     return $result;
   }
@@ -211,6 +410,12 @@ class RegisterRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'phone')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'surname')
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'country', $pb.PbFieldType.O3)
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'district', $pb.PbFieldType.O3)
+    ..a<$core.int>(12, _omitFieldNames ? '' : 'locale', $pb.PbFieldType.O3)
+    ..a<$core.int>(13, _omitFieldNames ? '' : 'timezone', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -243,6 +448,60 @@ class RegisterRequest extends $pb.GeneratedMessage {
   $core.bool hasPhone() => $_has(0);
   @$pb.TagNumber(1)
   void clearPhone() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get surname => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set surname($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSurname() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSurname() => clearField(3);
+
+  @$pb.TagNumber(10)
+  $core.int get country => $_getIZ(3);
+  @$pb.TagNumber(10)
+  set country($core.int v) { $_setSignedInt32(3, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasCountry() => $_has(3);
+  @$pb.TagNumber(10)
+  void clearCountry() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get district => $_getIZ(4);
+  @$pb.TagNumber(11)
+  set district($core.int v) { $_setSignedInt32(4, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasDistrict() => $_has(4);
+  @$pb.TagNumber(11)
+  void clearDistrict() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get locale => $_getIZ(5);
+  @$pb.TagNumber(12)
+  set locale($core.int v) { $_setSignedInt32(5, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasLocale() => $_has(5);
+  @$pb.TagNumber(12)
+  void clearLocale() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get timezone => $_getIZ(6);
+  @$pb.TagNumber(13)
+  set timezone($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasTimezone() => $_has(6);
+  @$pb.TagNumber(13)
+  void clearTimezone() => clearField(13);
 }
 
 class LoginRequest extends $pb.GeneratedMessage {
@@ -297,10 +556,14 @@ class LoginRequest extends $pb.GeneratedMessage {
 
 class LoginResponse extends $pb.GeneratedMessage {
   factory LoginResponse({
+    $core.int? status,
     $fixnum.Int64? sessionId,
     Account? account,
   }) {
     final $result = create();
+    if (status != null) {
+      $result.status = status;
+    }
     if (sessionId != null) {
       $result.sessionId = sessionId;
     }
@@ -314,8 +577,9 @@ class LoginResponse extends $pb.GeneratedMessage {
   factory LoginResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'users'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
-    ..aOM<Account>(2, _omitFieldNames ? '' : 'account', subBuilder: Account.create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OU3)
+    ..aInt64(2, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
+    ..aOM<Account>(3, _omitFieldNames ? '' : 'account', subBuilder: Account.create)
     ..hasRequiredFields = false
   ;
 
@@ -341,24 +605,33 @@ class LoginResponse extends $pb.GeneratedMessage {
   static LoginResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get sessionId => $_getI64(0);
+  $core.int get status => $_getIZ(0);
   @$pb.TagNumber(1)
-  set sessionId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set status($core.int v) { $_setUnsignedInt32(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasSessionId() => $_has(0);
+  $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSessionId() => clearField(1);
+  void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  Account get account => $_getN(1);
+  $fixnum.Int64 get sessionId => $_getI64(1);
   @$pb.TagNumber(2)
-  set account(Account v) { setField(2, v); }
+  set sessionId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAccount() => $_has(1);
+  $core.bool hasSessionId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAccount() => clearField(2);
-  @$pb.TagNumber(2)
-  Account ensureAccount() => $_ensure(1);
+  void clearSessionId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  Account get account => $_getN(2);
+  @$pb.TagNumber(3)
+  set account(Account v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAccount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAccount() => clearField(3);
+  @$pb.TagNumber(3)
+  Account ensureAccount() => $_ensure(2);
 }
 
 class Account extends $pb.GeneratedMessage {
@@ -958,6 +1231,7 @@ class UpdateAccountDataRequest extends $pb.GeneratedMessage {
     $core.String? patronymic,
     $core.String? birthdate,
     $core.int? country,
+    $core.int? district,
     $core.int? locale,
     $core.int? timezone,
   }) {
@@ -977,6 +1251,9 @@ class UpdateAccountDataRequest extends $pb.GeneratedMessage {
     if (country != null) {
       $result.country = country;
     }
+    if (district != null) {
+      $result.district = district;
+    }
     if (locale != null) {
       $result.locale = locale;
     }
@@ -995,8 +1272,9 @@ class UpdateAccountDataRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'patronymic')
     ..aOS(4, _omitFieldNames ? '' : 'birthdate')
     ..a<$core.int>(5, _omitFieldNames ? '' : 'country', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'locale', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'timezone', $pb.PbFieldType.O3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'district', $pb.PbFieldType.O3)
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'locale', $pb.PbFieldType.O3)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'timezone', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -1067,22 +1345,31 @@ class UpdateAccountDataRequest extends $pb.GeneratedMessage {
   void clearCountry() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.int get locale => $_getIZ(5);
+  $core.int get district => $_getIZ(5);
   @$pb.TagNumber(6)
-  set locale($core.int v) { $_setSignedInt32(5, v); }
+  set district($core.int v) { $_setSignedInt32(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasLocale() => $_has(5);
+  $core.bool hasDistrict() => $_has(5);
   @$pb.TagNumber(6)
-  void clearLocale() => clearField(6);
+  void clearDistrict() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.int get timezone => $_getIZ(6);
+  $core.int get locale => $_getIZ(6);
   @$pb.TagNumber(7)
-  set timezone($core.int v) { $_setSignedInt32(6, v); }
+  set locale($core.int v) { $_setSignedInt32(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasTimezone() => $_has(6);
+  $core.bool hasLocale() => $_has(6);
   @$pb.TagNumber(7)
-  void clearTimezone() => clearField(7);
+  void clearLocale() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get timezone => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set timezone($core.int v) { $_setSignedInt32(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTimezone() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTimezone() => clearField(8);
 }
 
 class UpdatePasswordRequest extends $pb.GeneratedMessage {
@@ -1409,11 +1696,17 @@ class UsersApi {
   $pb.RpcClient _client;
   UsersApi(this._client);
 
-  $async.Future<CommonResponse> register($pb.ClientContext? ctx, RegisterRequest request) =>
-    _client.invoke<CommonResponse>(ctx, 'Users', 'Register', request, CommonResponse())
+  $async.Future<IdentificationResponse> identification($pb.ClientContext? ctx, IdentificationRequest request) =>
+    _client.invoke<IdentificationResponse>(ctx, 'Users', 'Identification', request, IdentificationResponse())
   ;
-  $async.Future<LoginResponse> login($pb.ClientContext? ctx, LoginRequest request) =>
-    _client.invoke<LoginResponse>(ctx, 'Users', 'Login', request, LoginResponse())
+  $async.Future<CommonResponse> checkCode($pb.ClientContext? ctx, CheckCodeRequest request) =>
+    _client.invoke<CommonResponse>(ctx, 'Users', 'CheckCode', request, CommonResponse())
+  ;
+  $async.Future<LoginResponse> loginByCode($pb.ClientContext? ctx, LoginRequest request) =>
+    _client.invoke<LoginResponse>(ctx, 'Users', 'LoginByCode', request, LoginResponse())
+  ;
+  $async.Future<LoginResponse> register($pb.ClientContext? ctx, RegisterRequest request) =>
+    _client.invoke<LoginResponse>(ctx, 'Users', 'Register', request, LoginResponse())
   ;
   $async.Future<CommonResponse> hasSession($pb.ClientContext? ctx, HasSessionRequest request) =>
     _client.invoke<CommonResponse>(ctx, 'Users', 'HasSession', request, CommonResponse())

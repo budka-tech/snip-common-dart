@@ -21,8 +21,10 @@ import 'users.pbjson.dart';
 export 'users.pb.dart';
 
 abstract class UsersServiceBase extends $pb.GeneratedService {
-  $async.Future<$5.CommonResponse> register($pb.ServerContext ctx, $5.RegisterRequest request);
-  $async.Future<$5.LoginResponse> login($pb.ServerContext ctx, $5.LoginRequest request);
+  $async.Future<$5.IdentificationResponse> identification($pb.ServerContext ctx, $5.IdentificationRequest request);
+  $async.Future<$5.CommonResponse> checkCode($pb.ServerContext ctx, $5.CheckCodeRequest request);
+  $async.Future<$5.LoginResponse> loginByCode($pb.ServerContext ctx, $5.LoginRequest request);
+  $async.Future<$5.LoginResponse> register($pb.ServerContext ctx, $5.RegisterRequest request);
   $async.Future<$5.CommonResponse> hasSession($pb.ServerContext ctx, $5.HasSessionRequest request);
   $async.Future<$5.Account> getAccount($pb.ServerContext ctx, $5.CommonRequest request);
   $async.Future<$5.CommonResponse> updateAccountData($pb.ServerContext ctx, $5.UpdateAccountDataRequest request);
@@ -34,8 +36,10 @@ abstract class UsersServiceBase extends $pb.GeneratedService {
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
+      case 'Identification': return $5.IdentificationRequest();
+      case 'CheckCode': return $5.CheckCodeRequest();
+      case 'LoginByCode': return $5.LoginRequest();
       case 'Register': return $5.RegisterRequest();
-      case 'Login': return $5.LoginRequest();
       case 'HasSession': return $5.HasSessionRequest();
       case 'GetAccount': return $5.CommonRequest();
       case 'UpdateAccountData': return $5.UpdateAccountDataRequest();
@@ -50,8 +54,10 @@ abstract class UsersServiceBase extends $pb.GeneratedService {
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
+      case 'Identification': return this.identification(ctx, request as $5.IdentificationRequest);
+      case 'CheckCode': return this.checkCode(ctx, request as $5.CheckCodeRequest);
+      case 'LoginByCode': return this.loginByCode(ctx, request as $5.LoginRequest);
       case 'Register': return this.register(ctx, request as $5.RegisterRequest);
-      case 'Login': return this.login(ctx, request as $5.LoginRequest);
       case 'HasSession': return this.hasSession(ctx, request as $5.HasSessionRequest);
       case 'GetAccount': return this.getAccount(ctx, request as $5.CommonRequest);
       case 'UpdateAccountData': return this.updateAccountData(ctx, request as $5.UpdateAccountDataRequest);
