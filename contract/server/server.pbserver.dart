@@ -22,24 +22,18 @@ import 'server.pbjson.dart';
 export 'server.pb.dart';
 
 abstract class ServerServiceBase extends $pb.GeneratedService {
-  $async.Future<$5.Empty> call($pb.ServerContext ctx, $6.Request request);
-  $async.Future<$5.Empty> subscribe($pb.ServerContext ctx, $6.Request request);
-  $async.Future<$5.Empty> unSubscribe($pb.ServerContext ctx, $6.UnsubscribeRequest request);
+  $async.Future<$5.Empty> request($pb.ServerContext ctx, $6.ParamsRequest request);
 
   $pb.GeneratedMessage createRequest($core.String methodName) {
     switch (methodName) {
-      case 'Call': return $6.Request();
-      case 'Subscribe': return $6.Request();
-      case 'UnSubscribe': return $6.UnsubscribeRequest();
+      case 'Request': return $6.ParamsRequest();
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String methodName, $pb.GeneratedMessage request) {
     switch (methodName) {
-      case 'Call': return this.call(ctx, request as $6.Request);
-      case 'Subscribe': return this.subscribe(ctx, request as $6.Request);
-      case 'UnSubscribe': return this.unSubscribe(ctx, request as $6.UnsubscribeRequest);
+      case 'Request': return this.request(ctx, request as $6.ParamsRequest);
       default: throw $core.ArgumentError('Unknown method: $methodName');
     }
   }

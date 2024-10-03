@@ -15,19 +15,13 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 class MessageType extends $pb.ProtobufEnum {
   static const MessageType Call = MessageType._(0, _omitEnumNames ? '' : 'Call');
-  static const MessageType CallSuccess = MessageType._(1, _omitEnumNames ? '' : 'CallSuccess');
-  static const MessageType CallError = MessageType._(2, _omitEnumNames ? '' : 'CallError');
-  static const MessageType Subscribe = MessageType._(3, _omitEnumNames ? '' : 'Subscribe');
-  static const MessageType SubscribeError = MessageType._(4, _omitEnumNames ? '' : 'SubscribeError');
-  static const MessageType Unsubscribe = MessageType._(5, _omitEnumNames ? '' : 'Unsubscribe');
-  static const MessageType Event = MessageType._(6, _omitEnumNames ? '' : 'Event');
+  static const MessageType Subscribe = MessageType._(1, _omitEnumNames ? '' : 'Subscribe');
+  static const MessageType Unsubscribe = MessageType._(2, _omitEnumNames ? '' : 'Unsubscribe');
+  static const MessageType Event = MessageType._(3, _omitEnumNames ? '' : 'Event');
 
   static const $core.List<MessageType> values = <MessageType> [
     Call,
-    CallSuccess,
-    CallError,
     Subscribe,
-    SubscribeError,
     Unsubscribe,
     Event,
   ];
