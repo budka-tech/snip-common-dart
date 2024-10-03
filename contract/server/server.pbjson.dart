@@ -36,15 +36,16 @@ final $typed_data.Uint8List messageTypeDescriptor = $convert.base64Decode(
 const Domain$json = {
   '1': 'Domain',
   '2': [
-    {'1': 'Auth', '2': 0},
-    {'1': 'Users', '2': 1},
-    {'1': 'Assist', '2': 2},
+    {'1': 'Socket', '2': 0},
+    {'1': 'Auth', '2': 1},
+    {'1': 'Users', '2': 2},
+    {'1': 'Assist', '2': 3},
   ],
 };
 
 /// Descriptor for `Domain`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List domainDescriptor = $convert.base64Decode(
-    'CgZEb21haW4SCAoEQXV0aBAAEgkKBVVzZXJzEAESCgoGQXNzaXN0EAI=');
+    'CgZEb21haW4SCgoGU29ja2V0EAASCAoEQXV0aBABEgkKBVVzZXJzEAISCgoGQXNzaXN0EAM=');
 
 @$core.Deprecated('Use subscribeActionDescriptor instead')
 const SubscribeAction$json = {

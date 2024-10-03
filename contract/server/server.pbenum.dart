@@ -33,11 +33,13 @@ class MessageType extends $pb.ProtobufEnum {
 }
 
 class Domain extends $pb.ProtobufEnum {
-  static const Domain Auth = Domain._(0, _omitEnumNames ? '' : 'Auth');
-  static const Domain Users = Domain._(1, _omitEnumNames ? '' : 'Users');
-  static const Domain Assist = Domain._(2, _omitEnumNames ? '' : 'Assist');
+  static const Domain Socket = Domain._(0, _omitEnumNames ? '' : 'Socket');
+  static const Domain Auth = Domain._(1, _omitEnumNames ? '' : 'Auth');
+  static const Domain Users = Domain._(2, _omitEnumNames ? '' : 'Users');
+  static const Domain Assist = Domain._(3, _omitEnumNames ? '' : 'Assist');
 
   static const $core.List<Domain> values = <Domain> [
+    Socket,
     Auth,
     Users,
     Assist,
